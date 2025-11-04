@@ -1,38 +1,53 @@
 # Guide de déploiement sur GitHub Pages
 
-## Déploiement manuel
+## Déploiement manuel (HTML/CSS/JS pur)
 
-Pour déployer le site sur GitHub Pages :
+Pour déployer le site sur GitHub Pages, il suffit de copier les fichiers directement :
 
-1. **Builder le projet** :
-   ```bash
-   npm run build
-   ```
+### Méthode 1 : Branche gh-pages
 
-2. **Basculer sur la branche gh-pages** :
+1. **Basculer sur la branche gh-pages** :
    ```bash
    git checkout gh-pages
    ```
+   (ou créer la branche si elle n'existe pas : `git checkout --orphan gh-pages`)
 
-3. **Copier le contenu de dist/** :
+2. **Copier les fichiers nécessaires** :
    ```bash
-   cp -r dist/* .
-   rm -rf dist
+   # Depuis la branche main
+   git checkout main
+   cp -r html/* .
+   cp -r css .
+   cp -r js .
+   cp -r public .
    ```
 
-4. **Commit et push** :
+3. **Commit et push** :
    ```bash
    git add -A
    git commit -m "Deploy: mise à jour du site"
    git push origin gh-pages
    ```
 
-5. **Retourner sur main** :
+4. **Retourner sur main** :
    ```bash
    git checkout main
    ```
 
-## Configuration GitHub Pages
+### Méthode 2 : Déployer depuis la racine (plus simple)
+
+Si vous configurez GitHub Pages pour utiliser la branche `main` et le dossier `/html` :
+
+1. Dans les **Settings** du repository → **Pages** :
+   - Source : **Deploy from a branch**
+   - Branch : **main**
+   - Folder : **/html**
+
+2. Les fichiers seront servis directement depuis `html/`
+
+⚠️ **Note** : Il faudra ajuster les chemins dans les fichiers HTML pour qu'ils soient relatifs à la racine du site (pas `../css` mais `/css`).
+
+## Configuration GitHub Pages recommandée
 
 Dans les **Settings** du repository → **Pages** :
 - Source : **Deploy from a branch**
@@ -41,3 +56,30 @@ Dans les **Settings** du repository → **Pages** :
 
 Le site sera disponible sur : `https://frd100.github.io/wpc-site-astro/`
 
+## Structure de déploiement
+
+Les fichiers suivants doivent être à la racine de gh-pages :
+```
+gh-pages/
+├── index.html
+├── equipe.html
+├── contact.html
+├── nous-rejoindre.html
+├── mentions-legales.html
+├── confidentialite.html
+├── exercer-mes-droits.html
+├── css/
+│   ├── global.css
+│   └── custom.css
+├── js/
+│   ├── utils.js
+│   ├── button-animation.js
+│   ├── header.js
+│   ├── hero.js
+│   ├── domaines-cards.js
+│   └── timeline.js
+└── public/
+    ├── icons/
+    ├── images/
+    └── models/
+```

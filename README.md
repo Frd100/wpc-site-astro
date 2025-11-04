@@ -1,73 +1,82 @@
-# WPC Site Astro
+# WPC Site - HTML/CSS/JS Pur
 
-Site web de West Paris Consulting migré vers Astro + Tailwind CSS + Vite.
+Site web de West Paris Consulting en HTML/CSS/JavaScript pur.
 
 ## 🚀 Technologies
 
-- **Astro** : Framework web moderne pour sites statiques
-- **Tailwind CSS** : Framework CSS utility-first
+- **HTML5** : Structure sémantique
+- **CSS3** : Styles personnalisés
+- **JavaScript (ES6+)** : Interactions et animations
+- **Tailwind CSS** : Framework CSS utility-first (via CDN)
 - **GSAP** : Bibliothèque d'animations (via CDN)
-- **Vite** : Build tool rapide
 
-## 📦 Installation
+## 📂 Structure du projet
+
+```
+├── html/              # Pages HTML (7 pages)
+│   ├── index.html
+│   ├── equipe.html
+│   ├── contact.html
+│   ├── nous-rejoindre.html
+│   ├── mentions-legales.html
+│   ├── confidentialite.html
+│   └── exercer-mes-droits.html
+├── css/               # Styles CSS
+│   ├── global.css     # Styles globaux
+│   └── custom.css     # Styles personnalisés
+├── js/                # Scripts JavaScript
+│   ├── utils.js
+│   ├── button-animation.js
+│   ├── header.js
+│   ├── hero.js
+│   ├── domaines-cards.js
+│   └── timeline.js
+└── public/            # Assets statiques
+    ├── icons/         # Favicons
+    ├── images/        # Images
+    └── models/        # Modèles 3D
+```
+
+## 🖥️ Utilisation
+
+Ouvrez directement les fichiers HTML dans votre navigateur :
 
 ```bash
-npm install
+open html/index.html
 ```
 
-## 🛠️ Développement
+Ou utilisez un serveur local simple :
 
 ```bash
-npm run dev
+python3 -m http.server 8000
 ```
 
-Le site sera accessible sur `http://localhost:4321`
+Puis ouvrez : `http://localhost:8000/html/index.html`
 
-## 🏗️ Build
+## 📄 Pages
 
-```bash
-npm run build
-```
-
-Le build de production sera généré dans le dossier `dist/`
-
-## 📄 Structure
-
-```
-├── src/
-│   ├── components/      # Composants Astro réutilisables
-│   ├── layouts/         # Layouts de base
-│   ├── pages/           # Pages du site (routing automatique)
-│   ├── scripts/         # Scripts utilitaires
-│   └── styles/          # Styles globaux
-├── public/              # Assets statiques (images, icons, etc.)
-└── astro.config.mjs     # Configuration Astro
-```
-
-## 📝 Pages
-
-- `/` - Page d'accueil
-- `/equipe` - Notre équipe
-- `/contact` - Contact
-- `/nous-rejoindre` - Carrière
-- `/mentions-legales` - Mentions légales
-- `/confidentialite` - Politique de confidentialité
-- `/exercer-mes-droits` - Exercer ses droits RGPD
+- `index.html` - Page d'accueil
+- `equipe.html` - Notre équipe
+- `contact.html` - Contact
+- `nous-rejoindre.html` - Nous rejoindre
+- `mentions-legales.html` - Mentions légales
+- `confidentialite.html` - Politique de confidentialité
+- `exercer-mes-droits.html` - Exercer ses droits RGPD
 
 ## 🎨 Styles
 
-Les styles utilisent Tailwind CSS avec des variables personnalisées définies dans `tailwind.config.mjs`.
+Les styles utilisent Tailwind CSS via CDN avec des styles personnalisés dans `css/custom.css`.
 
-Les classes GSAP (`.split-chars`, `.split-words`, etc.) sont protégées dans la safelist de Tailwind.
+Les classes GSAP (`.split-chars`, `.split-words`, etc.) sont définies dans `css/custom.css`.
 
-## ⚡ Performance
+## ⚡ Dépendances externes
 
-- Images optimisées automatiquement par Astro
-- CSS purgé automatiquement par Tailwind
-- JavaScript minimal (islands architecture d'Astro)
-- GSAP chargé via CDN (SplitText premium)
+- **Tailwind CSS** : Chargé via CDN
+- **GSAP** : Chargé via CDN (inclut SplitText premium)
+- **Google Fonts** : Inter et Cormorant Garamond
 
-## 📚 Documentation
+## 📝 Notes
 
-Voir `GUIDE_MIGRATION_ASTRO_TAILWIND_VITE.md` pour les détails complets de la migration.
-
+- Tous les chemins sont **relatifs** pour permettre l'ouverture directe des fichiers
+- Aucune dépendance npm requise
+- Compatible avec tous les navigateurs modernes
