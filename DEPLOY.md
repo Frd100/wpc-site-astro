@@ -1,73 +1,43 @@
 # Guide de déploiement sur GitHub Pages
 
-## Déploiement manuel (HTML/CSS/JS pur)
+## Déploiement depuis la branche `main`
 
-Pour déployer le site sur GitHub Pages, il suffit de copier les fichiers directement :
+Avec un projet HTML/CSS/JS pur, le déploiement est simple : on utilise directement la branche `main`.
 
-### Méthode 1 : Branche gh-pages
-
-1. **Basculer sur la branche gh-pages** :
-   ```bash
-   git checkout gh-pages
-   ```
-   (ou créer la branche si elle n'existe pas : `git checkout --orphan gh-pages`)
-
-2. **Copier les fichiers nécessaires** :
-   ```bash
-   # Depuis la branche main
-   git checkout main
-   cp -r html/* .
-   cp -r css .
-   cp -r js .
-   cp -r public .
-   ```
-
-3. **Commit et push** :
-   ```bash
-   git add -A
-   git commit -m "Deploy: mise à jour du site"
-   git push origin gh-pages
-   ```
-
-4. **Retourner sur main** :
-   ```bash
-   git checkout main
-   ```
-
-### Méthode 2 : Déployer depuis la racine (plus simple)
-
-Si vous configurez GitHub Pages pour utiliser la branche `main` et le dossier `/html` :
+### Configuration GitHub Pages
 
 1. Dans les **Settings** du repository → **Pages** :
    - Source : **Deploy from a branch**
    - Branch : **main**
-   - Folder : **/html**
+   - Folder : **/ (root)**
 
-2. Les fichiers seront servis directement depuis `html/`
+2. Le site sera disponible sur : `https://frd100.github.io/wpc-site-astro/`
 
-⚠️ **Note** : Il faudra ajuster les chemins dans les fichiers HTML pour qu'ils soient relatifs à la racine du site (pas `../css` mais `/css`).
+### Déploiement
 
-## Configuration GitHub Pages recommandée
+Pour déployer, il suffit de **push sur `main`** :
 
-Dans les **Settings** du repository → **Pages** :
-- Source : **Deploy from a branch**
-- Branch : **gh-pages**
-- Folder : **/ (root)**
-
-Le site sera disponible sur : `https://frd100.github.io/wpc-site-astro/`
-
-## Structure de déploiement
-
-Les fichiers suivants doivent être à la racine de gh-pages :
+```bash
+git add .
+git commit -m "Deploy: mise à jour du site"
+git push origin main
 ```
-gh-pages/
-├── index.html
-├── equipe.html
-├── contact.html
-├── nous-rejoindre.html
-├── mentions-legales.html
-├── confidentialite.html
-├── exercer-mes-droits.html
+
+GitHub Pages se mettra à jour automatiquement après chaque push sur `main`.
+
+### Structure actuelle
+
+Le projet est organisé comme suit :
+```
+wpc-site-astro/
+├── html/
+│   ├── index.html
+│   ├── equipe.html
+│   ├── contact.html
+│   ├── nous-rejoindre.html
+│   ├── mentions-legales.html
+│   ├── confidentialite.html
+│   └── exercer-mes-droits.html
 ├── css/
 │   ├── global.css
 │   └── custom.css
@@ -83,3 +53,13 @@ gh-pages/
     ├── images/
     └── models/
 ```
+
+### Structure de déploiement
+
+Les fichiers HTML sont maintenant à la racine du dépôt avec des chemins absolus :
+- `/index.html`, `/equipe.html`, `/contact.html`, etc.
+- `/css/` pour les styles
+- `/js/` pour les scripts
+- `/public/` pour les assets
+
+Les fichiers dans `html/` sont conservés pour le développement local avec chemins relatifs.

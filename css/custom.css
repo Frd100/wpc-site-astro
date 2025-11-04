@@ -43,21 +43,7 @@
     --button-flair-color: #000000;
 }
 
-.button {
-    align-items: center;
-    background: transparent;
-    border: none;
-    color: currentColor;
-    cursor: pointer;
-    display: inline-flex;
-    gap: 0.363636em;
-    justify-content: center;
-    letter-spacing: -0.01em;
-    line-height: 1.04545;
-    overflow: hidden;
-    position: relative;
-    text-decoration: none;
-}
+/* Base button styles - fusionné avec la définition ci-dessous */
 
 /* Spécifique au bouton de la hero: forcer le fond blanc et le texte noir */
 .button.hero-button {
@@ -139,19 +125,6 @@ body#page-wpc-main .hero-button:focus {
     width: 170%;
 }
 
-/* Animation CSS personnalisée */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* Scroll animation classes */
 .scroll-animation--in-viewport {
     /* Classe ajoutée par IntersectionObserver */
@@ -171,10 +144,7 @@ body#page-wpc-main .hero-button:focus {
     transition: background-color 0.3s ease;
 }
 
-/* Fond blanc pour toutes les sections sur la page index */
-body#page-wpc-main .homepage-section.collection-module {
-    background-color: #FFFFFF;
-}
+/* Les sections sont déjà en blanc par défaut, pas besoin de duplication */
 
 @media (min-width: 768px) {
     .homepage-section.collection-module {
@@ -233,10 +203,7 @@ body#page-wpc-main .homepage-section.collection-module {
     letter-spacing: -0.02em;
 }
 
-/* Texte noir pour les titres sur la page index (fond blanc) */
-body#page-wpc-main .headline {
-    color: #000000;
-}
+/* Les couleurs sont déjà définies par défaut, pas besoin de duplication */
 
 @media (min-width: 768px) {
     .headline {
@@ -252,10 +219,7 @@ body#page-wpc-main .headline {
     margin-bottom: 2rem;
 }
 
-/* Texte gris pour les sous-titres sur la page index (fond blanc) */
-body#page-wpc-main .subhead {
-    color: #666666;
-}
+/* Les couleurs sont déjà définies par défaut, pas besoin de duplication */
 
 @media (min-width: 768px) {
     .subhead {
@@ -280,7 +244,7 @@ body#page-wpc-main .subhead {
     }
 }
 
-/* Button styles */
+/* Button styles - Définition unique */
 .button {
     display: inline-flex;
     align-items: center;
@@ -293,6 +257,13 @@ body#page-wpc-main .subhead {
     transition: all 0.2s ease;
     cursor: pointer;
     border: none;
+    color: currentColor;
+    gap: 0.363636em;
+    letter-spacing: -0.01em;
+    line-height: 1.04545;
+    overflow: hidden;
+    position: relative;
+    background: transparent;
 }
 
 @media (min-width: 768px) {
@@ -350,17 +321,7 @@ body#page-wpc-main .button-tertiary:hover {
     background-color: #FFFFFF;
 }
 
-/* Toutes les sections en fond blanc sur la page index */
-body#page-wpc-main .homepage-section[data-unit-id="about-wpc"],
-body#page-wpc-main .homepage-section[data-unit-id="why-choose-wpc"],
-body#page-wpc-main .homepage-section[data-unit-id="process-wpc"],
-body#page-wpc-main .homepage-section[data-unit-id="services-wpc"],
-body#page-wpc-main .homepage-section[data-unit-id="service-strategie"],
-body#page-wpc-main .homepage-section[data-unit-id="service-juridique"],
-body#page-wpc-main .homepage-section[data-unit-id="service-innovation"],
-body#page-wpc-main .homepage-section[data-unit-id="cta-wpc"] {
-    background-color: #FFFFFF;
-}
+/* Les sections sont déjà en blanc par défaut, pas besoin de duplication */
 
 /* Services groupés : réduire le padding entre les sous-sections */
 .homepage-section[data-unit-id="service-strategie"],
@@ -392,22 +353,10 @@ body#page-wpc-main .homepage-section[data-unit-id="cta-wpc"] {
 }
 
 /* Transition depuis la hero section (noir) vers la première section */
-.homepage-section:first-of-type {
-    background: linear-gradient(to bottom,
-            #000000 0%,
-            #0a0f1a 5%,
-            #141a28 10%,
-            #1e2536 15%,
-            #283044 20%,
-            #323b52 25%,
-            #F5F5F7 30%,
-            #F5F5F7 100%);
-    padding-top: 0;
-}
-
-/* Transition vers fond blanc sur la page index */
+/* Sur la page index, le fond est blanc directement */
 body#page-wpc-main .homepage-section:first-of-type {
     background: #FFFFFF;
+    padding-top: 0;
 }
 
 .homepage-section:first-of-type .module-content {
@@ -425,9 +374,8 @@ body#page-wpc-main .homepage-section:first-of-type {
     margin-top: 0;
 }
 
-/* Ajustement du contraste pour la première section (fond gris clair) */
-.homepage-section:first-of-type .headline,
-.homepage-section:first-of-type .subhead {
+/* Ajustement du contraste pour la première section */
+.homepage-section:first-of-type .headline {
     color: #000000;
 }
 
@@ -435,14 +383,7 @@ body#page-wpc-main .homepage-section:first-of-type {
     color: #666666;
 }
 
-/* Texte noir pour la première section sur la page index (fond blanc) */
-body#page-wpc-main .homepage-section:first-of-type .headline {
-    color: #000000;
-}
-
-body#page-wpc-main .homepage-section:first-of-type .subhead {
-    color: #666666;
-}
+/* Sur la page index (fond blanc), les couleurs sont identiques, donc pas besoin de duplication */
 
 /* Section CTA (avant le footer) : espacement supplémentaire en bas */
 .homepage-section[data-unit-id="cta-wpc"] {
@@ -478,7 +419,7 @@ body#page-wpc-main .homepage-section:first-of-type .subhead {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('../public/images/background-mobile.png') center top / cover no-repeat;
+    background: url('/public/images/background-mobile.png') center top / cover no-repeat;
     background-attachment: fixed;
     transform: translateY(-30%);
     opacity: 0;
@@ -490,7 +431,7 @@ body#page-wpc-main .homepage-section:first-of-type .subhead {
 
 @media (min-width: 768px) {
     .hero-minimal::before {
-        background-image: url('../public/images/background.png');
+        background-image: url('/public/images/background.png');
     }
 }
 
@@ -672,6 +613,20 @@ body#page-wpc-main .homepage-section:first-of-type .subhead {
     will-change: opacity;
 }
 
+/* Navigation sur les pages avec fond blanc (autres que page d'accueil) */
+body:not(#page-wpc-main) .main-navigation {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+body:not(#page-wpc-main) .main-navigation__logo-text {
+    color: #FFFFFF;
+}
+
+body:not(#page-wpc-main) .main-navigation__link {
+    color: #FFFFFF;
+}
+
 @keyframes fadeInNav {
     0% {
         opacity: 0;
@@ -707,7 +662,7 @@ body#page-wpc-main .homepage-section:first-of-type .subhead {
 
 .main-navigation__content {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     height: 100%;
     position: relative;
 }
@@ -735,21 +690,15 @@ body#page-wpc-main .homepage-section:first-of-type .subhead {
 
 @media (min-width: 768px) {
     .main-navigation__logo {
-        align-items: flex-start;
+        align-items: center;
         padding-left: 1.5rem;
-        padding-top: 1rem;
+        padding-top: 0;
         margin-right: 3rem;
     }
 }
 
 .main-navigation__links {
-    padding-bottom: 0.5rem;
-}
-
-@media (min-width: 768px) {
-    .main-navigation__links {
-        padding-bottom: 0.75rem;
-    }
+    padding-bottom: 0;
 }
 
 .main-navigation__logo-text {
