@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Base URL for GitHub Pages -->
+  <base href="/wpc-site-astro/">
+
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://westparisconsulting.fr/exercer-mes-droits.html">
   <meta property="og:title" content="Exercer mes droits RGPD - West Paris Consulting">
@@ -11,11 +14,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="/public/icons/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="public/icons/favicon.ico">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
-  <link rel="stylesheet" href="/css/global.css">
-  <link rel="stylesheet" href="/css/custom.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/custom.css">
 </head>
 <body class="page basicpage" id="page-wpc-exercer-droits">
   <div class="root responsivegrid w-full max-w-full">
@@ -30,7 +33,7 @@
         </button>
         <div class="main-navigation__content flex justify-start items-center m-0 py-1.5 md:py-2 pl-3 md:pl-4 relative h-full">
           <div class="main-navigation__logo">
-            <a href="/index.html" class="main-navigation__logo-link">
+            <a href="index.html" class="main-navigation__logo-link">
               <div class="main-navigation__logo-text text-white">
                 <span class="logo-line">West Paris</span>
                 <span class="logo-line">Consulting</span>
@@ -38,16 +41,16 @@
             </a>
           </div>
           <div class="main-navigation__links hidden md:flex gap-5 md:gap-6 items-end">
-            <a href="/index.html" class="main-navigation__link"><span class="main-navigation__link-text">Accueil</span><span class="main-navigation__link-text" aria-hidden="true">Accueil</span></a>
-            <a href="/equipe.html" class="main-navigation__link"><span class="main-navigation__link-text">Notre-Équipe</span><span class="main-navigation__link-text" aria-hidden="true">Notre-Équipe</span></a>
-            <a href="/contact.html" class="main-navigation__link"><span class="main-navigation__link-text">Contact</span><span class="main-navigation__link-text" aria-hidden="true">Contact</span></a>
-            <a href="/nous-rejoindre.html" class="main-navigation__link"><span class="main-navigation__link-text">Nous rejoindre</span><span class="main-navigation__link-text" aria-hidden="true">Nous rejoindre</span></a>
+            <a href="index.html" class="main-navigation__link"><span class="main-navigation__link-text">Accueil</span><span class="main-navigation__link-text" aria-hidden="true">Accueil</span></a>
+            <a href="equipe.html" class="main-navigation__link"><span class="main-navigation__link-text">Notre-Équipe</span><span class="main-navigation__link-text" aria-hidden="true">Notre-Équipe</span></a>
+            <a href="contact.html" class="main-navigation__link"><span class="main-navigation__link-text">Contact</span><span class="main-navigation__link-text" aria-hidden="true">Contact</span></a>
+            <a href="nous-rejoindre.html" class="main-navigation__link"><span class="main-navigation__link-text">Nous rejoindre</span><span class="main-navigation__link-text" aria-hidden="true">Nous rejoindre</span></a>
           </div>
           <div class="main-navigation__links hidden md:hidden fixed top-0 left-0 w-full h-screen z-40 flex flex-col justify-center items-center gap-8" id="mobile-menu">
-            <a href="/index.html" class="main-navigation__link main-navigation__link--mobile"><span class="main-navigation__link-text">Accueil</span><span class="main-navigation__link-text" aria-hidden="true">Accueil</span></a>
-            <a href="/equipe.html" class="main-navigation__link main-navigation__link--mobile"><span class="main-navigation__link-text">Notre-Équipe</span><span class="main-navigation__link-text" aria-hidden="true">Notre-Équipe</span></a>
-            <a href="/contact.html" class="main-navigation__link main-navigation__link--mobile"><span class="main-navigation__link-text">Contact</span><span class="main-navigation__link-text" aria-hidden="true">Contact</span></a>
-            <a href="/nous-rejoindre.html" class="main-navigation__link main-navigation__link--mobile"><span class="main-navigation__link-text">Nous rejoindre</span><span class="main-navigation__link-text" aria-hidden="true">Nous rejoindre</span></a>
+            <a href="index.html" class="main-navigation__link main-navigation__link--mobile"><span class="main-navigation__link-text">Accueil</span><span class="main-navigation__link-text" aria-hidden="true">Accueil</span></a>
+            <a href="equipe.html" class="main-navigation__link main-navigation__link--mobile"><span class="main-navigation__link-text">Notre-Équipe</span><span class="main-navigation__link-text" aria-hidden="true">Notre-Équipe</span></a>
+            <a href="contact.html" class="main-navigation__link main-navigation__link--mobile"><span class="main-navigation__link-text">Contact</span><span class="main-navigation__link-text" aria-hidden="true">Contact</span></a>
+            <a href="nous-rejoindre.html" class="main-navigation__link main-navigation__link--mobile"><span class="main-navigation__link-text">Nous rejoindre</span><span class="main-navigation__link-text" aria-hidden="true">Nous rejoindre</span></a>
           </div>
         </div>
       </div>
@@ -116,17 +119,17 @@
             <div class="cmp-footer__nav-section">
               <h4 class="text-lg font-semibold mb-4">Navigation</h4>
               <div class="cmp-footer__nav-links flex flex-col gap-2">
-                <a href="/index.html" class="text-gray-300 hover:text-primary-blue transition-colors">Accueil</a>
-                <a href="/equipe.html" class="text-gray-300 hover:text-primary-blue transition-colors">Notre Équipe</a>
-                <a href="/contact.html" class="text-gray-300 hover:text-primary-blue transition-colors">Contact</a>
+                <a href="index.html" class="text-gray-300 hover:text-primary-blue transition-colors">Accueil</a>
+                <a href="equipe.html" class="text-gray-300 hover:text-primary-blue transition-colors">Notre Équipe</a>
+                <a href="contact.html" class="text-gray-300 hover:text-primary-blue transition-colors">Contact</a>
               </div>
             </div>
             <div class="cmp-footer__nav-section">
               <h4 class="text-lg font-semibold mb-4">Légal</h4>
               <div class="cmp-footer__nav-links flex flex-col gap-2">
-                <a href="/mentions-legales.html" class="text-gray-300 hover:text-primary-blue transition-colors">Mentions légales</a>
-                <a href="/confidentialite.html" class="text-gray-300 hover:text-primary-blue transition-colors">Politique de Confidentialité</a>
-                <a href="/exercer-mes-droits.html" class="text-gray-300 hover:text-primary-blue transition-colors">Exercer mes droits</a>
+                <a href="mentions-legales.html" class="text-gray-300 hover:text-primary-blue transition-colors">Mentions légales</a>
+                <a href="confidentialite.html" class="text-gray-300 hover:text-primary-blue transition-colors">Politique de Confidentialité</a>
+                <a href="exercer-mes-droits.html" class="text-gray-300 hover:text-primary-blue transition-colors">Exercer mes droits</a>
               </div>
             </div>
           </div>
@@ -137,9 +140,9 @@
       </div>
     </footer>
   </div>
-  <script src="/js/utils.js"></script>
-  <script src="/js/button-animation.js"></script>
-  <script src="/js/header.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/button-animation.js"></script>
+  <script src="js/header.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
       try {

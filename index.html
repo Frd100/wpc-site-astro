@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="content-language" content="fr-FR">
 
+    <!-- Base URL for GitHub Pages -->
+    <base href="/wpc-site-astro/">
+
     <!-- WPC Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://westparisconsulting.fr/">
@@ -40,9 +43,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/public/icons/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/public/icons/favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/public/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="public/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="public/icons/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="public/icons/apple-touch-icon.png">
 
     <!-- GSAP via CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
@@ -51,8 +54,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/custom.css">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -103,7 +106,7 @@
                 <div
                     class="main-navigation__content flex justify-start m-0 py-1.5 md:py-2 pl-3 md:pl-4 relative h-full">
                     <div class="main-navigation__logo">
-                        <a href="/index.html" class="main-navigation__logo-link">
+                        <a href="index.html" class="main-navigation__logo-link">
                             <div class="main-navigation__logo-text text-white">
                                 <span class="logo-line">West Paris</span>
                                 <span class="logo-line">Consulting</span>
@@ -113,19 +116,19 @@
 
                     <div class="main-navigation__links hidden md:flex gap-5 md:gap-6" id="desktop-menu"
                         role="navigation" aria-label="Menu principal">
-                        <a href="/index.html" class="main-navigation__link">
+                        <a href="index.html" class="main-navigation__link">
                             <span class="main-navigation__link-text">Accueil</span>
                             <span class="main-navigation__link-text" aria-hidden="true">Accueil</span>
                         </a>
-                        <a href="/equipe.html" class="main-navigation__link">
+                        <a href="equipe.html" class="main-navigation__link">
                             <span class="main-navigation__link-text">Notre-Équipe</span>
                             <span class="main-navigation__link-text" aria-hidden="true">Notre-Équipe</span>
                         </a>
-                        <a href="/contact.html" class="main-navigation__link">
+                        <a href="contact.html" class="main-navigation__link">
                             <span class="main-navigation__link-text">Contact</span>
                             <span class="main-navigation__link-text" aria-hidden="true">Contact</span>
                         </a>
-                        <a href="/nous-rejoindre.html" class="main-navigation__link">
+                        <a href="nous-rejoindre.html" class="main-navigation__link">
                             <span class="main-navigation__link-text">Nous rejoindre</span>
                             <span class="main-navigation__link-text" aria-hidden="true">Nous rejoindre</span>
                         </a>
@@ -133,19 +136,19 @@
 
                     <div class="main-navigation__links hidden md:hidden fixed top-0 left-0 w-full h-screen z-40 flex flex-col justify-center items-center gap-8"
                         id="mobile-menu" role="navigation" aria-label="Menu principal">
-                        <a href="/index.html" class="main-navigation__link main-navigation__link--mobile">
+                        <a href="index.html" class="main-navigation__link main-navigation__link--mobile">
                             <span class="main-navigation__link-text">Accueil</span>
                             <span class="main-navigation__link-text" aria-hidden="true">Accueil</span>
                         </a>
-                        <a href="/equipe.html" class="main-navigation__link main-navigation__link--mobile">
+                        <a href="equipe.html" class="main-navigation__link main-navigation__link--mobile">
                             <span class="main-navigation__link-text">Notre-Équipe</span>
                             <span class="main-navigation__link-text" aria-hidden="true">Notre-Équipe</span>
                         </a>
-                        <a href="/contact.html" class="main-navigation__link main-navigation__link--mobile">
+                        <a href="contact.html" class="main-navigation__link main-navigation__link--mobile">
                             <span class="main-navigation__link-text">Contact</span>
                             <span class="main-navigation__link-text" aria-hidden="true">Contact</span>
                         </a>
-                        <a href="/nous-rejoindre.html" class="main-navigation__link main-navigation__link--mobile">
+                        <a href="nous-rejoindre.html" class="main-navigation__link main-navigation__link--mobile">
                             <span class="main-navigation__link-text">Nous rejoindre</span>
                             <span class="main-navigation__link-text" aria-hidden="true">Nous rejoindre</span>
                         </a>
@@ -172,7 +175,7 @@
                         de projets concrets.
                     </p>
                     <div class="hero-button-container">
-                        <a href="/contact.html"
+                        <a href="contact.html"
                             class="hero-button button button--stroke inline-block px-6 py-3 border-2 border-white text-white relative overflow-hidden">
                             <span
                                 class="button__flair absolute inset-0 rounded-full opacity-0 pointer-events-none"></span>
@@ -188,14 +191,14 @@
                 <div data-unit-id="about-wpc" data-analytics-section-engagement="name:promo-about">
                     <div class="module-content">
                         <div class="unit-wrapper">
-                            <a class="unit-link" href="/equipe.html" target="_self" rel="follow" aria-hidden="true"
+                            <a class="unit-link" href="equipe.html" target="_self" rel="follow" aria-hidden="true"
                                 tabindex="-1">&nbsp;</a>
                             <div class="unit-copy-wrapper">
                                 <h3 class="headline">Qui sommes-nous</h3>
                                 <p class="subhead">Une association étudiante engagée qui accompagne<br>entreprises et
                                     organisations dans leurs projets<br>de transformation et d'innovation.</p>
                                 <div class="cta-links">
-                                    <a class="button button-primary" href="/equipe.html" target="_self" rel="follow"
+                                    <a class="button button-primary" href="equipe.html" target="_self" rel="follow"
                                         data-analytics-region="learn more" aria-label="Découvrir notre équipe">Découvrir
                                         notre équipe</a>
                                 </div>
@@ -211,13 +214,13 @@
                 <div data-unit-id="services-wpc" data-analytics-section-engagement="name:promo-services">
                     <div class="module-content">
                         <div class="unit-wrapper">
-                            <a class="unit-link" href="/contact.html" target="_self" rel="follow" aria-hidden="true"
+                            <a class="unit-link" href="contact.html" target="_self" rel="follow" aria-hidden="true"
                                 tabindex="-1">&nbsp;</a>
                             <div class="unit-copy-wrapper">
                                 <h3 class="headline">Domaines d'intervention</h3>
                                 <p class="subhead">Trois domaines d'intervention<br>pour accompagner vos projets.</p>
                                 <div class="cta-links">
-                                    <a class="button button-primary" href="/contact.html" target="_self" rel="follow"
+                                    <a class="button button-primary" href="contact.html" target="_self" rel="follow"
                                         data-analytics-region="learn more" aria-label="Nous contacter">Nous
                                         contacter</a>
                                 </div>
@@ -298,14 +301,14 @@
                 <div data-unit-id="why-choose-wpc" data-analytics-section-engagement="name:promo-why-choose">
                     <div class="module-content">
                         <div class="unit-wrapper">
-                            <a class="unit-link" href="/contact.html" target="_self" rel="follow" aria-hidden="true"
+                            <a class="unit-link" href="contact.html" target="_self" rel="follow" aria-hidden="true"
                                 tabindex="-1">&nbsp;</a>
                             <div class="unit-copy-wrapper">
                                 <h3 class="headline">Pourquoi nous choisir</h3>
                                 <p class="subhead">Réactivité, expertise étudiante, suivi personnalisé<br>et rapport
                                     qualité-prix incomparable.</p>
                                 <div class="cta-links">
-                                    <a class="button button-primary" href="/contact.html" target="_self" rel="follow"
+                                    <a class="button button-primary" href="contact.html" target="_self" rel="follow"
                                         data-analytics-region="learn more" aria-label="Nous contacter">Nous
                                         contacter</a>
                                 </div>
@@ -321,14 +324,14 @@
                 <div data-unit-id="process-wpc" data-analytics-section-engagement="name:promo-process">
                     <div class="module-content">
                         <div class="unit-wrapper">
-                            <a class="unit-link" href="/contact.html" target="_self" rel="follow" aria-hidden="true"
+                            <a class="unit-link" href="contact.html" target="_self" rel="follow" aria-hidden="true"
                                 tabindex="-1">&nbsp;</a>
                             <div class="unit-copy-wrapper">
                                 <h3 class="headline">Comment nous travaillons</h3>
                                 <p class="subhead">Un processus structuré en 5 étapes<br>pour garantir la réussite de
                                     votre projet.</p>
                                 <div class="cta-links">
-                                    <a class="button button-primary" href="/contact.html" target="_self" rel="follow"
+                                    <a class="button button-primary" href="contact.html" target="_self" rel="follow"
                                         data-analytics-region="learn more"
                                         aria-label="Découvrir notre processus">Découvrir notre processus</a>
                                 </div>
@@ -439,17 +442,17 @@
                 <div data-unit-id="cta-wpc" data-analytics-section-engagement="name:promo-cta">
                     <div class="module-content">
                         <div class="unit-wrapper">
-                            <a class="unit-link" href="/contact.html" target="_self" rel="follow" aria-hidden="true"
+                            <a class="unit-link" href="contact.html" target="_self" rel="follow" aria-hidden="true"
                                 tabindex="-1">&nbsp;</a>
                             <div class="unit-copy-wrapper">
                                 <h3 class="headline">Prêt à démarrer votre projet ?</h3>
                                 <p class="subhead">Contactez-nous pour discuter de vos besoins<br>et découvrir comment
                                     nous pouvons vous accompagner.</p>
                                 <div class="cta-links">
-                                    <a class="button button-primary" href="/contact.html" target="_self" rel="follow"
+                                    <a class="button button-primary" href="contact.html" target="_self" rel="follow"
                                         data-analytics-region="learn more" aria-label="Nous contacter">Nous
                                         contacter</a>
-                                    <a class="button button-tertiary" href="/equipe.html" target="_self" rel="follow"
+                                    <a class="button button-tertiary" href="equipe.html" target="_self" rel="follow"
                                         data-analytics-region="learn more" aria-label="Découvrir notre équipe">Découvrir
                                         notre équipe</a>
                                 </div>
@@ -477,11 +480,11 @@
                         <div class="cmp-footer__nav-section">
                             <h4 class="text-lg font-semibold mb-4">Navigation</h4>
                             <div class="cmp-footer__nav-links flex flex-col gap-2">
-                                <a href="/index.html"
+                                <a href="index.html"
                                     class="text-gray-300 hover:text-primary-blue transition-colors">Accueil</a>
-                                <a href="/equipe.html"
+                                <a href="equipe.html"
                                     class="text-gray-300 hover:text-primary-blue transition-colors">Notre Équipe</a>
-                                <a href="/contact.html"
+                                <a href="contact.html"
                                     class="text-gray-300 hover:text-primary-blue transition-colors">Contact</a>
                             </div>
                         </div>
@@ -489,12 +492,12 @@
                         <div class="cmp-footer__nav-section">
                             <h4 class="text-lg font-semibold mb-4">Légal</h4>
                             <div class="cmp-footer__nav-links flex flex-col gap-2">
-                                <a href="/mentions-legales.html"
+                                <a href="mentions-legales.html"
                                     class="text-gray-300 hover:text-primary-blue transition-colors">Mentions légales</a>
-                                <a href="/confidentialite.html"
+                                <a href="confidentialite.html"
                                     class="text-gray-300 hover:text-primary-blue transition-colors">Politique de
                                     Confidentialité</a>
-                                <a href="/exercer-mes-droits.html"
+                                <a href="exercer-mes-droits.html"
                                     class="text-gray-300 hover:text-primary-blue transition-colors">Exercer mes
                                     droits</a>
                             </div>
@@ -514,12 +517,12 @@
     </div>
 
     <!-- Global scripts -->
-    <script src="/js/utils.js"></script>
-    <script src="/js/button-animation.js"></script>
-    <script src="/js/header.js"></script>
-    <script src="/js/hero.js"></script>
-    <script src="/js/domaines-cards.js"></script>
-    <script src="/js/timeline.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/button-animation.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/hero.js"></script>
+    <script src="js/domaines-cards.js"></script>
+    <script src="js/timeline.js"></script>
 
     <script>
         // Smooth scrolling pour les ancres
