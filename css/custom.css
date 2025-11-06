@@ -529,6 +529,7 @@ body:not(#page-wpc-main):not(#page-wpc-contact):not(#page-wpc-nous-rejoindre) .h
 }
 
 @media (max-width: 768px) {
+
     /* Container hero plus court sur mobile pour les autres pages (sauf contact et nous-rejoindre) */
     body:not(#page-wpc-main):not(#page-wpc-contact):not(#page-wpc-nous-rejoindre) .hero-container {
         justify-content: center;
@@ -547,6 +548,19 @@ body:not(#page-wpc-main):not(#page-wpc-contact):not(#page-wpc-nous-rejoindre) .h
         justify-content: flex-start;
         padding-top: 3.25rem;
         padding-bottom: 3.25rem;
+    }
+
+    /* Ajustement supplémentaire pour les éléments de la hero sur la page index */
+    body#page-wpc-main .hero-title {
+        margin-top: 0;
+    }
+
+    body#page-wpc-main .hero-subtitle {
+        margin-top: 0;
+    }
+
+    body#page-wpc-main .hero-button-container {
+        margin-top: 0;
     }
 }
 
