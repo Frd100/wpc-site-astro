@@ -539,7 +539,7 @@ body:not(#page-wpc-main):not(#page-wpc-contact):not(#page-wpc-nous-rejoindre) .h
     body#page-wpc-main .hero-container,
     body#page-wpc-main section.hero-minimal .hero-container {
         justify-content: flex-start;
-        padding-top: 2.75rem;
+        padding-top: 3.25rem;
         padding-bottom: 3.25rem;
     }
 
