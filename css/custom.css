@@ -1248,7 +1248,7 @@ body#page-wpc-nous-rejoindre .hero-contact-form iframe {
 .index-ancrage-content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 0;
     align-items: stretch;
     max-width: 1400px;
     margin: 0 auto;
