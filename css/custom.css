@@ -938,22 +938,34 @@ body#page-wpc-nous-rejoindre .hero-contact-form iframe {
     font-size: 1.5rem;
     height: auto;
     min-height: 1.5em;
-    color: #FFFFFF;
+    color: #9ca3af;
     overflow: visible;
     align-items: center;
     justify-content: center;
     width: auto;
+    transition: color 0.2s ease;
+}
+
+.main-navigation__link.main-navigation__link--mobile:active,
+.main-navigation__link.main-navigation__link--mobile:focus {
+    color: #FFFFFF;
 }
 
 /* Désactiver le positionnement absolu pour les liens mobiles */
 .main-navigation__link--mobile .main-navigation__link-text {
     position: relative;
     z-index: auto;
-    color: #FFFFFF;
+    color: #9ca3af;
     display: block;
     opacity: 1;
     transform: none;
     visibility: visible;
+    transition: color 0.2s ease;
+}
+
+.main-navigation__link--mobile:active .main-navigation__link-text,
+.main-navigation__link--mobile:focus .main-navigation__link-text {
+    color: #FFFFFF;
 }
 
 .main-navigation__link--mobile .main-navigation__link-text:last-child {
@@ -1281,11 +1293,17 @@ body#page-wpc-nous-rejoindre .hero-contact-form iframe {
 #mobile-menu .main-navigation__link-text {
     opacity: 1;
     visibility: visible;
-    color: #FFFFFF;
+    color: #9ca3af;
     display: block;
     position: relative;
     transform: none;
-    font-size: 1.25rem;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+
+#mobile-menu .main-navigation__link:active .main-navigation__link-text,
+#mobile-menu .main-navigation__link:focus .main-navigation__link-text {
+    color: #FFFFFF;
 }
 
 /* Masquer le deuxième span dans les autres pages pour éviter la duplication */
