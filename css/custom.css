@@ -675,6 +675,11 @@ body#page-wpc-nous-rejoindre .hero-contact-form iframe {
         font-size: 3.5rem;
         margin-bottom: 1.5rem;
     }
+
+    /* Surcharge pour la page index - doit être après la règle générale */
+    body#page-wpc-main .hero-title {
+        margin-bottom: 1rem;
+    }
 }
 
 .hero-subtitle {
@@ -694,6 +699,11 @@ body#page-wpc-nous-rejoindre .hero-contact-form iframe {
     .hero-subtitle {
         font-size: 1.375rem;
         margin-top: 0;
+    }
+
+    /* Surcharge pour la page index - doit être après la règle générale */
+    body#page-wpc-main .hero-subtitle {
+        margin-bottom: 1.5rem;
     }
 }
 
