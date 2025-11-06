@@ -9,17 +9,17 @@
 
     <!-- Base URL for GitHub Pages - Détection automatique -->
     <script>
-      // Détecte si on est en local ou en production
-      (function() {
-        const isLocal = window.location.protocol === 'file:' || 
-                       window.location.hostname === 'localhost' || 
-                       window.location.hostname === '127.0.0.1';
-        if (!isLocal) {
-          const base = document.createElement('base');
-          base.href = '/wpc-site-astro/';
-          document.head.insertBefore(base, document.head.firstChild);
-        }
-      })();
+        // Détecte si on est en local ou en production
+        (function () {
+            const isLocal = window.location.protocol === 'file:' ||
+                window.location.hostname === 'localhost' ||
+                window.location.hostname === '127.0.0.1';
+            if (!isLocal) {
+                const base = document.createElement('base');
+                base.href = '/wpc-site-astro/';
+                document.head.insertBefore(base, document.head.firstChild);
+            }
+        })();
     </script>
 
     <!-- WPC Meta Tags -->
@@ -115,8 +115,7 @@
                     </div>
                 </button>
 
-                <div
-                    class="main-navigation__content flex justify-start m-0 pl-3 md:pl-4 relative h-full">
+                <div class="main-navigation__content flex justify-start m-0 pl-3 md:pl-4 relative h-full">
                     <div class="main-navigation__logo">
                         <a href="index.html" class="main-navigation__logo-link">
                             <div class="main-navigation__logo-text text-white">
@@ -198,277 +197,141 @@
             </section>
 
             <!-- ABOUT -->
-            <section class="homepage-section collection-module" data-module-template="promos"
-                data-analytics-region="promo">
-                <div data-unit-id="about-wpc" data-analytics-section-engagement="name:promo-about">
-                    <div class="module-content">
-                        <div class="unit-wrapper">
-                            <a class="unit-link" href="equipe.html" target="_self" rel="follow" aria-hidden="true"
-                                tabindex="-1">&nbsp;</a>
-                            <div class="unit-copy-wrapper">
-                                <h3 class="headline">Qui sommes-nous</h3>
-                                <p class="subhead">Une association étudiante engagée qui accompagne<br>entreprises et
-                                    organisations dans leurs projets<br>de transformation et d'innovation.</p>
-                                <div class="cta-links">
-                                    <a class="button button-primary" href="equipe.html" target="_self" rel="follow"
-                                        data-analytics-region="learn more" aria-label="Découvrir notre équipe">Découvrir
-                                        notre équipe</a>
-                                </div>
-                            </div>
+            <section class="index-section index-section--about">
+                <div class="index-section__container">
+                    <div class="index-stacked-list">
+                        <div class="index-stacked-item">
+                            <h2 class="index-stacked-title">
+                                <a href="equipe.html" class="index-stacked-link">Qui sommes-nous</a>
+                            </h2>
+                            <p class="index-stacked-text">
+                                Une association étudiante engagée qui accompagne entreprises et organisations dans leurs
+                                projets de transformation et d'innovation.
+                            </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- SERVICES -->
-            <section class="homepage-section collection-module" data-module-template="promos"
-                data-analytics-region="promo">
-                <div data-unit-id="services-wpc" data-analytics-section-engagement="name:promo-services">
-                    <div class="module-content">
-                        <div class="unit-wrapper">
-                            <a class="unit-link" href="contact.html" target="_self" rel="follow" aria-hidden="true"
-                                tabindex="-1">&nbsp;</a>
-                            <div class="unit-copy-wrapper">
-                                <h3 class="headline">Domaines d'intervention</h3>
-                                <p class="subhead">Trois domaines d'intervention<br>pour accompagner vos projets.</p>
-                                <div class="cta-links">
-                                    <a class="button button-primary" href="contact.html" target="_self" rel="follow"
-                                        data-analytics-region="learn more" aria-label="Nous contacter">Nous
-                                        contacter</a>
-                                </div>
-                            </div>
+            <!-- ANCrage -->
+            <section class="index-section index-section--ancrage">
+                <div class="index-section__container">
+                    <div class="index-stacked-list">
+                        <div class="index-stacked-item">
+                            <h2 class="index-stacked-title">
+                                <span class="index-stacked-link-text">Notre ancrage local</span>
+                            </h2>
+                            <p class="index-stacked-text">
+                                Basés à l'Université Paris Nanterre, nous sommes au cœur d'un écosystème dynamique qui
+                                nous connecte naturellement au quartier d'affaires de La Défense. Cette proximité nous
+                                permet d'accompagner entreprises et organisations avec une compréhension fine des enjeux
+                                locaux et régionaux.
+                            </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- DOMAINES CARDS -->
-            <section class="wpc-domaines-cards-section py-12 px-3 md:px-4 bg-white">
-                <div class="wpc-domaines-cards-title-wrapper mb-12">
-                    <p
-                        class="wpc-domaines-cards-subtitle cmp-expertise-subtitle text-lg md:text-xl text-center text-gray-700 mb-8">
-                        Trois domaines d'intervention<br>
-                        pour accompagner vos projets.
-                    </p>
-                </div>
-
-                <div class="wpc-domaines-cards-container grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
-                    <div class="wpc-domaine-card bg-gray-800 rounded-2xl p-8 text-white">
-                        <div class="wpc-domaine-card-content">
-                            <div class="wpc-domaine-card-title-section mb-6">
-                                <div class="wpc-domaine-card-header mb-2">
-                                    <span
-                                        class="wpc-domaine-card-header-text text-sm font-medium text-black">Stratégie
-                                        & Marketing</span>
-                                </div>
-                                <h2 class="wpc-domaine-card-main-title text-xl font-bold">Stratégie et communication
-                                </h2>
-                            </div>
-                            <div class="wpc-domaine-card-description">
-                                <p class="text-gray-300">Études de marché, création de portefeuilles clients,
-                                    élaboration de plans de communication.</p>
-                            </div>
-                        </div>
+            <!-- DOMAINES -->
+            <section class="index-section index-section--domaines">
+                <div class="index-section__container">
+                    <div class="index-section__header">
+                        <h2 class="index-section__title">Domaines d'intervention</h2>
+                        <p class="index-section__subtitle">
+                            Trois domaines d'intervention pour accompagner vos projets.
+                        </p>
                     </div>
-
-                    <div class="wpc-domaine-card bg-gray-800 rounded-2xl p-8 text-white">
-                        <div class="wpc-domaine-card-content">
-                            <div class="wpc-domaine-card-title-section mb-6">
-                                <div class="wpc-domaine-card-header mb-2">
-                                    <span
-                                        class="wpc-domaine-card-header-text text-sm font-medium text-black">Juridique</span>
-                                </div>
-                                <h2 class="wpc-domaine-card-main-title text-xl font-bold">Conseil et veille juridique
-                                </h2>
-                            </div>
-                            <div class="wpc-domaine-card-description">
-                                <p class="text-gray-300">Rédaction de documents de référence, appui aux démarches
-                                    administratives, veille juridique et réglementaire.</p>
-                            </div>
+                    <div class="index-domaines-grid">
+                        <div class="index-domaine-card">
+                            <h3 class="index-domaine-card__title">Stratégie et communication</h3>
+                            <ul class="index-domaine-card__list">
+                                <li>Études de marché</li>
+                                <li>Création de portefeuilles clients</li>
+                                <li>Élaboration de plans de communication</li>
+                            </ul>
                         </div>
-                    </div>
-
-                    <div class="wpc-domaine-card bg-gray-800 rounded-2xl p-8 text-white">
-                        <div class="wpc-domaine-card-content">
-                            <div class="wpc-domaine-card-title-section mb-6">
-                                <div class="wpc-domaine-card-header mb-2">
-                                    <span
-                                        class="wpc-domaine-card-header-text text-sm font-medium text-black">Numérique</span>
-                                </div>
-                                <h2 class="wpc-domaine-card-main-title text-xl font-bold">Solutions digitales et
-                                    transformation</h2>
-                            </div>
-                            <div class="wpc-domaine-card-description">
-                                <p class="text-gray-300">Audit de présence digitale, création de sites web, optimisation
-                                    des outils collaboratifs.</p>
-                            </div>
+                        <div class="index-domaine-card">
+                            <h3 class="index-domaine-card__title">Conseil et veille juridique</h3>
+                            <ul class="index-domaine-card__list">
+                                <li>Rédaction de documents de référence</li>
+                                <li>Appui aux démarches administratives</li>
+                                <li>Veille juridique et réglementaire</li>
+                            </ul>
+                        </div>
+                        <div class="index-domaine-card">
+                            <h3 class="index-domaine-card__title">Solutions digitales et transformation</h3>
+                            <ul class="index-domaine-card__list">
+                                <li>Audit de présence digitale</li>
+                                <li>Création de sites web</li>
+                                <li>Optimisation des outils collaboratifs</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- WHY CHOOSE -->
-            <section class="homepage-section collection-module" data-module-template="promos"
-                data-analytics-region="promo">
-                <div data-unit-id="why-choose-wpc" data-analytics-section-engagement="name:promo-why-choose">
-                    <div class="module-content">
-                        <div class="unit-wrapper">
-                            <a class="unit-link" href="contact.html" target="_self" rel="follow" aria-hidden="true"
-                                tabindex="-1">&nbsp;</a>
-                            <div class="unit-copy-wrapper">
-                                <h3 class="headline">Pourquoi nous choisir</h3>
-                                <p class="subhead">Réactivité, expertise étudiante, suivi personnalisé<br>et rapport
-                                    qualité-prix incomparable.</p>
-                                <div class="cta-links">
-                                    <a class="button button-primary" href="contact.html" target="_self" rel="follow"
-                                        data-analytics-region="learn more" aria-label="Nous contacter">Nous
-                                        contacter</a>
-                                </div>
-                            </div>
-                        </div>
+            <!-- PROCESSUS -->
+            <section class="index-section index-section--processus">
+                <div class="index-section__container">
+                    <div class="index-section__header">
+                        <h2 class="index-section__title">Nos processus</h2>
                     </div>
-                </div>
-            </section>
-
-            <!-- PROCESS -->
-            <section class="homepage-section collection-module" data-module-template="promos"
-                data-analytics-region="promo">
-                <div data-unit-id="process-wpc" data-analytics-section-engagement="name:promo-process">
-                    <div class="module-content">
-                        <div class="unit-wrapper">
-                            <a class="unit-link" href="contact.html" target="_self" rel="follow" aria-hidden="true"
-                                tabindex="-1">&nbsp;</a>
-                            <div class="unit-copy-wrapper">
-                                <h3 class="headline">Comment nous travaillons</h3>
-                                <p class="subhead">Un processus structuré en 5 étapes<br>pour garantir la réussite de
-                                    votre projet.</p>
-                                <div class="cta-links">
-                                    <a class="button button-primary" href="contact.html" target="_self" rel="follow"
-                                        data-analytics-region="learn more"
-                                        aria-label="Découvrir notre processus">Découvrir notre processus</a>
-                                </div>
-                            </div>
+                    <div class="index-stacked-list">
+                        <div class="index-stacked-item">
+                            <h3 class="index-stacked-title">
+                                <span class="index-stacked-link-text">Prise de contact</span>
+                            </h3>
+                            <p class="index-stacked-text">Un premier échange permettant d'identifier les besoins.</p>
                         </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- TIMELINE -->
-            <section class="cmp-about-section about-section py-20 px-3 md:px-4 bg-gray-100">
-                <div class="cmp-about-container about-container max-w-7xl mx-auto">
-                    <div class="wpc-expertise-title-wrapper mb-16">
-                        <div class="huge-letters text-4xl md:text-6xl font-bold text-center">
-                            <span animation-direction="below-custom" class="huge-letters__title scroll-animation">
-                                <span class="is-word" aria-hidden="true">
-                                    <i aria-hidden="true">N</i>
-                                    <i aria-hidden="true">O</i>
-                                    <i aria-hidden="true">S</i>
-                                </span>
-                            </span>
-                            <br>
-                            <span animation-direction="below-custom" class="huge-letters__title scroll-animation">
-                                <span class="is-word" aria-hidden="true">
-                                    <i aria-hidden="true">P</i>
-                                    <i aria-hidden="true">R</i>
-                                    <i aria-hidden="true">O</i>
-                                    <i aria-hidden="true">C</i>
-                                    <i aria-hidden="true">E</i>
-                                    <i aria-hidden="true">S</i>
-                                    <i aria-hidden="true">S</i>
-                                    <i aria-hidden="true">U</i>
-                                    <i aria-hidden="true">S</i>
-                                </span>
-                            </span>
+                        <div class="index-stacked-item">
+                            <h3 class="index-stacked-title">
+                                <span class="index-stacked-link-text">Proposition d'intervention</span>
+                            </h3>
+                            <p class="index-stacked-text">Élaboration de la proposition sous 72 heures.</p>
                         </div>
-                    </div>
-
-                    <div id="section-wpc-processus" class="cmp-container">
-                        <div class="cmp-processus-section section-gray bg-white rounded-2xl p-8 md:p-12">
-                            <div class="cmp-processus-content">
-                                <div class="cmp-timeline flex flex-col gap-8">
-                                    <div class="cmp-timeline-step flex gap-6">
-                                        <div
-                                            class="cmp-timeline-step__number flex-shrink-0 w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold text-lg">
-                                            1</div>
-                                        <div class="cmp-timeline-step__content">
-                                            <h3 class="cmp-timeline-step__title text-xl font-bold mb-2">Prise de contact
-                                            </h3>
-                                            <p class="cmp-timeline-step__description text-gray-600">Un premier échange
-                                                permettant d'identifier les besoins.</p>
-                                        </div>
-                                    </div>
-                                    <div class="cmp-timeline-step flex gap-6">
-                                        <div
-                                            class="cmp-timeline-step__number flex-shrink-0 w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold text-lg">
-                                            2</div>
-                                        <div class="cmp-timeline-step__content">
-                                            <h3 class="cmp-timeline-step__title text-xl font-bold mb-2">Proposition
-                                                d'intervention</h3>
-                                            <p class="cmp-timeline-step__description text-gray-600">Élaboration de la
-                                                proposition sous 72 heures.</p>
-                                        </div>
-                                    </div>
-                                    <div class="cmp-timeline-step flex gap-6">
-                                        <div
-                                            class="cmp-timeline-step__number flex-shrink-0 w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold text-lg">
-                                            3</div>
-                                        <div class="cmp-timeline-step__content">
-                                            <h3 class="cmp-timeline-step__title text-xl font-bold mb-2">Réunion de
-                                                lancement</h3>
-                                            <p class="cmp-timeline-step__description text-gray-600">Une réunion de
-                                                cadrage formalisant les attentes et précisant les livrables.</p>
-                                        </div>
-                                    </div>
-                                    <div class="cmp-timeline-step flex gap-6">
-                                        <div
-                                            class="cmp-timeline-step__number flex-shrink-0 w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold text-lg">
-                                            4</div>
-                                        <div class="cmp-timeline-step__content">
-                                            <h3 class="cmp-timeline-step__title text-xl font-bold mb-2">Phase
-                                                opérationnelle</h3>
-                                            <p class="cmp-timeline-step__description text-gray-600">Les Chefs de Projet
-                                                pilotent la mission et assurent le suivi régulier avec le client.</p>
-                                        </div>
-                                    </div>
-                                    <div class="cmp-timeline-step flex gap-6">
-                                        <div
-                                            class="cmp-timeline-step__number flex-shrink-0 w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold text-lg">
-                                            5</div>
-                                        <div class="cmp-timeline-step__content">
-                                            <h3 class="cmp-timeline-step__title text-xl font-bold mb-2">Restitution et
-                                                clôture</h3>
-                                            <p class="cmp-timeline-step__description text-gray-600">Présentation
-                                                complète des résultats et remise du livrable final.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="index-stacked-item">
+                            <h3 class="index-stacked-title">
+                                <span class="index-stacked-link-text">Réunion de lancement</span>
+                            </h3>
+                            <p class="index-stacked-text">Une réunion de cadrage formalisant les attentes et précisant
+                                les livrables.</p>
+                        </div>
+                        <div class="index-stacked-item">
+                            <h3 class="index-stacked-title">
+                                <span class="index-stacked-link-text">Phase opérationnelle</span>
+                            </h3>
+                            <p class="index-stacked-text">Les Chefs de Projet pilotent la mission et assurent le suivi
+                                régulier avec le client.</p>
+                        </div>
+                        <div class="index-stacked-item">
+                            <h3 class="index-stacked-title">
+                                <span class="index-stacked-link-text">Restitution et clôture</span>
+                            </h3>
+                            <p class="index-stacked-text">Présentation complète des résultats et remise du livrable
+                                final.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- CTA -->
-            <section class="homepage-section collection-module" data-module-template="promos"
-                data-analytics-region="promo">
-                <div data-unit-id="cta-wpc" data-analytics-section-engagement="name:promo-cta">
-                    <div class="module-content">
-                        <div class="unit-wrapper">
-                            <a class="unit-link" href="contact.html" target="_self" rel="follow" aria-hidden="true"
-                                tabindex="-1">&nbsp;</a>
-                            <div class="unit-copy-wrapper">
-                                <h3 class="headline">Prêt à démarrer votre projet ?</h3>
-                                <p class="subhead">Contactez-nous pour discuter de vos besoins<br>et découvrir comment
-                                    nous pouvons vous accompagner.</p>
-                                <div class="cta-links">
-                                    <a class="button button-primary" href="contact.html" target="_self" rel="follow"
-                                        data-analytics-region="learn more" aria-label="Nous contacter">Nous
-                                        contacter</a>
-                                    <a class="button button-tertiary" href="equipe.html" target="_self" rel="follow"
-                                        data-analytics-region="learn more" aria-label="Découvrir notre équipe">Découvrir
-                                        notre équipe</a>
-                                </div>
-                            </div>
+            <section class="index-section index-section--cta">
+                <div class="index-section__container">
+                    <div class="index-section__content">
+                        <h2 class="index-section__title">Prêt à démarrer votre projet ?</h2>
+                        <p class="index-section__text">
+                            Contactez-nous pour discuter de vos besoins et découvrir comment nous pouvons vous
+                            accompagner.
+                        </p>
+                        <div class="index-cta-buttons">
+                            <a href="contact.html" class="index-button index-button--primary"
+                                aria-label="Nous contacter">
+                                Nous contacter
+                            </a>
+                            <a href="equipe.html" class="index-button index-button--secondary"
+                                aria-label="Découvrir notre équipe">
+                                Découvrir notre équipe
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -483,17 +346,18 @@
                     <div class="cmp-footer__info">
                         <div class="cmp-footer__contact-info">
                             <h4>Contact</h4>
-                            <p><a href="mailto:contact@westparisconsulting.fr" class="text-gray-300 hover:text-white transition-colors">contact@westparisconsulting.fr</a></p>
+                            <p><a href="mailto:contact@westparisconsulting.fr"
+                                    class="text-gray-300 hover:text-white transition-colors">contact@westparisconsulting.fr</a>
+                            </p>
                             <p>Université Paris Nanterre<br>200 Avenue de la République<br>92000 Nanterre</p>
                         </div>
                         <div class="cmp-footer__social">
                             <div class="cmp-footer__social-links">
-                                <a href="https://www.linkedin.com/company/westparisconsulting/" 
-                                   target="_blank" 
-                                   rel="noopener noreferrer"
-                                   class="cmp-footer__social-link"
-                                   aria-label="Suivez-nous sur LinkedIn">
-                                    <svg class="cmp-footer__social-icon" viewBox="0 0 382 382" xmlns="http://www.w3.org/2000/svg">
+                                <a href="https://www.linkedin.com/company/westparisconsulting/" target="_blank"
+                                    rel="noopener noreferrer" class="cmp-footer__social-link"
+                                    aria-label="Suivez-nous sur LinkedIn">
+                                    <svg class="cmp-footer__social-icon" viewBox="0 0 382 382"
+                                        xmlns="http://www.w3.org/2000/svg">
                                         <path d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889
                                           C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056
                                           H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806
@@ -502,7 +366,7 @@
                                           c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079
                                           c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426
                                           c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472
-                                          L341.91,330.654L341.91,330.654z"/>
+                                          L341.91,330.654L341.91,330.654z" />
                                     </svg>
                                 </a>
                             </div>
@@ -531,7 +395,8 @@
                     </nav>
 
                     <div class="cmp-footer__copyright">
-                        <p>© 2025 West Paris Consulting, association étudiante de l'Université Paris Nanterre. Tous droits réservés.</p>
+                        <p>© 2025 West Paris Consulting, association étudiante de l'Université Paris Nanterre. Tous
+                            droits réservés.</p>
                     </div>
                 </div>
             </div>
@@ -544,8 +409,7 @@
     <script src="js/button-animation.js"></script>
     <script src="js/header.js"></script>
     <script src="js/hero.js"></script>
-    <script src="js/domaines-cards.js"></script>
-    <script src="js/timeline.js"></script>
+    <script src="js/index-sections.js"></script>
 
     <script>
         // Smooth scrolling pour les ancres

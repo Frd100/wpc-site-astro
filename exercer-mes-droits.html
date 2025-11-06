@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr-FR" dir="ltr">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -7,10 +8,10 @@
   <!-- Base URL for GitHub Pages - Détection automatique -->
   <script>
     // Détecte si on est en local ou en production
-    (function() {
-      const isLocal = window.location.protocol === 'file:' || 
-                     window.location.hostname === 'localhost' || 
-                     window.location.hostname === '127.0.0.1';
+    (function () {
+      const isLocal = window.location.protocol === 'file:' ||
+        window.location.hostname === 'localhost' ||
+        window.location.hostname === '127.0.0.1';
       if (!isLocal) {
         const base = document.createElement('base');
         base.href = '/wpc-site-astro/';
@@ -25,7 +26,9 @@
   <title>Exercer mes droits RGPD - West Paris Consulting</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="./public/icons/favicon.ico">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
@@ -35,15 +38,17 @@
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/custom.css">
 </head>
+
 <body class="page basicpage" id="page-wpc-exercer-droits">
   <div class="root responsivegrid w-full max-w-full">
     <nav class="main-navigation">
       <div class="main-navigation__container w-full max-w-full mx-0 px-3 md:px-4">
-        <button class="main-navigation__toggle md:hidden bg-transparent border-none cursor-pointer z-50" id="mobile-menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <button class="main-navigation__toggle md:hidden bg-transparent border-none cursor-pointer z-50"
+          id="mobile-menu-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
           <div class="hamburger-icon flex flex-col gap-1 w-4 h-4">
-            <span class="hamburger-line bg-white h-0.5 w-full"></span>
-            <span class="hamburger-line bg-white h-0.5 w-full"></span>
-            <span class="hamburger-line bg-white h-0.5 w-full"></span>
+            <span class="hamburger-line bg-white h-0.5 w-full transition-all"></span>
+            <span class="hamburger-line bg-white h-0.5 w-full transition-all"></span>
+            <span class="hamburger-line bg-white h-0.5 w-full transition-all"></span>
           </div>
         </button>
         <div class="main-navigation__content flex justify-start m-0 pl-3 md:pl-4 relative h-full">
@@ -55,17 +60,40 @@
               </div>
             </a>
           </div>
-          <div class="main-navigation__links hidden md:flex gap-5 md:gap-6 items-end">
-            <a href="index.html" class="main-navigation__link"><span class="main-navigation__link-text">Accueil</span><span class="main-navigation__link-text" aria-hidden="true">Accueil</span></a>
-            <a href="equipe.html" class="main-navigation__link"><span class="main-navigation__link-text">Notre Équipe</span><span class="main-navigation__link-text" aria-hidden="true">Notre Équipe</span></a>
-            <a href="contact.html" class="main-navigation__link"><span class="main-navigation__link-text">Contact</span><span class="main-navigation__link-text" aria-hidden="true">Contact</span></a>
-            <a href="nous-rejoindre.html" class="main-navigation__link"><span class="main-navigation__link-text">Nous rejoindre</span><span class="main-navigation__link-text" aria-hidden="true">Nous rejoindre</span></a>
+          <div class="main-navigation__links hidden md:flex gap-5 md:gap-6" id="desktop-menu" role="navigation"
+            aria-label="Menu principal">
+            <a href="index.html" class="main-navigation__link">
+              <span class="main-navigation__link-text">Accueil</span>
+              <span class="main-navigation__link-text" aria-hidden="true">Accueil</span>
+            </a>
+            <a href="equipe.html" class="main-navigation__link">
+              <span class="main-navigation__link-text">Notre Équipe</span>
+              <span class="main-navigation__link-text" aria-hidden="true">Notre Équipe</span>
+            </a>
+            <a href="contact.html" class="main-navigation__link">
+              <span class="main-navigation__link-text">Contact</span>
+              <span class="main-navigation__link-text" aria-hidden="true">Contact</span>
+            </a>
+            <a href="nous-rejoindre.html" class="main-navigation__link">
+              <span class="main-navigation__link-text">Nous rejoindre</span>
+              <span class="main-navigation__link-text" aria-hidden="true">Nous rejoindre</span>
+            </a>
           </div>
-          <div class="main-navigation__links hidden md:hidden fixed top-0 left-0 w-full h-screen z-40 flex flex-col justify-center items-center gap-8" id="mobile-menu">
-            <a href="index.html" class="main-navigation__link main-navigation__link--mobile"><span class="main-navigation__link-text">Accueil</span><span class="main-navigation__link-text" aria-hidden="true">Accueil</span></a>
-            <a href="equipe.html" class="main-navigation__link main-navigation__link--mobile"><span class="main-navigation__link-text">Notre Équipe</span><span class="main-navigation__link-text" aria-hidden="true">Notre Équipe</span></a>
-            <a href="contact.html" class="main-navigation__link main-navigation__link--mobile"><span class="main-navigation__link-text">Contact</span><span class="main-navigation__link-text" aria-hidden="true">Contact</span></a>
-            <a href="nous-rejoindre.html" class="main-navigation__link main-navigation__link--mobile"><span class="main-navigation__link-text">Nous rejoindre</span><span class="main-navigation__link-text" aria-hidden="true">Nous rejoindre</span></a>
+          <div
+            class="main-navigation__links hidden md:hidden fixed top-0 left-0 w-full h-screen z-40 flex flex-col justify-center items-center gap-8"
+            id="mobile-menu" role="navigation" aria-label="Menu principal">
+            <a href="index.html" class="main-navigation__link main-navigation__link--mobile"><span
+                class="main-navigation__link-text">Accueil</span><span class="main-navigation__link-text"
+                aria-hidden="true">Accueil</span></a>
+            <a href="equipe.html" class="main-navigation__link main-navigation__link--mobile"><span
+                class="main-navigation__link-text">Notre Équipe</span><span class="main-navigation__link-text"
+                aria-hidden="true">Notre Équipe</span></a>
+            <a href="contact.html" class="main-navigation__link main-navigation__link--mobile"><span
+                class="main-navigation__link-text">Contact</span><span class="main-navigation__link-text"
+                aria-hidden="true">Contact</span></a>
+            <a href="nous-rejoindre.html" class="main-navigation__link main-navigation__link--mobile"><span
+                class="main-navigation__link-text">Nous rejoindre</span><span class="main-navigation__link-text"
+                aria-hidden="true">Nous rejoindre</span></a>
           </div>
         </div>
       </div>
@@ -84,50 +112,54 @@
             </div>
           </h1>
           <p class="hero-subtitle text-lg md:text-xl text-white/90 mb-8">
-            Vous avez le droit de contrôler<br>
-            vos données personnelles.
+            Comment exercer vos droits<br>
+            relatifs à vos données personnelles.
           </p>
         </div>
       </section>
 
-      <main class="main py-12 px-4">
-        <div class="cmp-container max-w-4xl mx-auto">
-          <div class="section-gray bg-white rounded-lg p-8 md:p-12">
-            <div class="cmp-droits-info mb-12">
-              <div class="legal-content space-y-6">
-                <div class="legal-section">
-                  <h3 class="legal-title text-xl font-semibold mb-2 text-gray-900">Droit d'accès</h3>
-                  <p class="legal-text text-gray-700">Vous pouvez demander quelles données personnelles nous détenons sur vous et comment elles sont utilisées.</p>
-                </div>
-                <div class="legal-section">
-                  <h3 class="legal-title text-xl font-semibold mb-2 text-gray-900">Droit de rectification</h3>
-                  <p class="legal-text text-gray-700">Vous pouvez demander la correction de données inexactes ou incomplètes.</p>
-                </div>
-                <div class="legal-section">
-                  <h3 class="legal-title text-xl font-semibold mb-2 text-gray-900">Droit à l'effacement</h3>
-                  <p class="legal-text text-gray-700">Vous pouvez demander la suppression de vos données personnelles dans certaines circonstances.</p>
-                </div>
-                <div class="legal-section">
-                  <h3 class="legal-title text-xl font-semibold mb-2 text-gray-900">Droit à la limitation</h3>
-                  <p class="legal-text text-gray-700">Vous pouvez demander la limitation du traitement de vos données.</p>
-                </div>
-                <div class="legal-section">
-                  <h3 class="legal-title text-xl font-semibold mb-2 text-gray-900">Droit à la portabilité</h3>
-                  <p class="legal-text text-gray-700">Vous pouvez demander une copie de vos données dans un format structuré.</p>
-                </div>
+      <main class="main">
+        <div class="cmp-container">
+          <div class="section-gray">
+            <div class="legal-content">
+              <div class="legal-section">
+                <h3 class="legal-title">Droit d'accès</h3>
+                <p class="legal-text">Vous pouvez demander quelles données personnelles nous détenons sur vous et
+                  comment elles sont utilisées.</p>
               </div>
-            </div>
-            <div class="cmp-droits-form">
-              <h2 class="legal-title text-2xl font-bold mb-6 text-gray-900">Exercer vos droits</h2>
-              <div class="droits-form">
-                <p class="legal-text text-gray-700 mb-6">Pour exercer vos droits relatifs au traitement de vos données personnelles, vous pouvez nous contacter directement par email.</p>
-                <div class="text-center my-8">
-                  <a href="mailto:contact@westparisconsulting.fr?subject=Exercice%20de%20mes%20droits%20RGPD&body=Bonjour,%0A%0AJe%20souhaite%20exercer%20mes%20droits%20relatifs%20au%20traitement%20de%20mes%20données%20personnelles.%0A%0AType%20de%20demande%20:%20%0A%0ADétails%20de%20ma%20demande%20:%20%0A%0AMes%20coordonnées%20:%0A-%20Nom%20:%20%0A-%20Prénom%20:%20%0A-%20Email%20:%20%0A%0AMerci%20pour%20votre%20traitement.%0A%0ACordialement" class="hero-button button button--stroke inline-block px-6 py-3 border-2 border-black text-black hover:bg-black hover:text-white transition-colors relative overflow-hidden" data-block="button">
-                    <span class="button__flair absolute inset-0 rounded-full opacity-0 pointer-events-none"></span>
-                    <span class="button__label relative z-10">Envoyer ma demande par email</span>
-                  </a>
+              <div class="legal-section">
+                <h3 class="legal-title">Droit de rectification</h3>
+                <p class="legal-text">Vous pouvez demander la correction de données inexactes ou incomplètes.</p>
+              </div>
+              <div class="legal-section">
+                <h3 class="legal-title">Droit à l'effacement</h3>
+                <p class="legal-text">Vous pouvez demander la suppression de vos données personnelles dans certaines
+                  circonstances.</p>
+              </div>
+              <div class="legal-section">
+                <h3 class="legal-title">Droit à la limitation</h3>
+                <p class="legal-text">Vous pouvez demander la limitation du traitement de vos données.</p>
+              </div>
+              <div class="legal-section">
+                <h3 class="legal-title">Droit à la portabilité</h3>
+                <p class="legal-text">Vous pouvez demander une copie de vos données dans un format structuré.</p>
+              </div>
+              <div class="legal-section">
+                <h2 class="legal-title text-2xl">Exercer vos droits</h2>
+                <p class="legal-text">Pour exercer vos droits relatifs au traitement de vos données personnelles, vous
+                  pouvez nous contacter directement par email.</p>
+                <div class="droits-form">
+                  <div class="text-center my-8">
+                    <a href="mailto:contact@westparisconsulting.fr?subject=Exercice%20de%20mes%20droits%20RGPD&body=Bonjour,%0A%0AJe%20souhaite%20exercer%20mes%20droits%20relatifs%20au%20traitement%20de%20mes%20données%20personnelles.%0A%0AType%20de%20demande%20:%20%0A%0ADétails%20de%20ma%20demande%20:%20%0A%0AMes%20coordonnées%20:%0A-%20Nom%20:%20%0A-%20Prénom%20:%20%0A-%20Email%20:%20%0A%0AMerci%20pour%20votre%20traitement.%0A%0ACordialement"
+                      class="hero-button button button--stroke inline-block px-6 py-3 border-2 border-primary-blue text-primary-blue hover:bg-primary-blue hover:text-white transition-colors relative overflow-hidden"
+                      data-block="button">
+                      <span class="button__flair absolute inset-0 rounded-full opacity-0 pointer-events-none"></span>
+                      <span class="button__label relative z-10">Envoyer ma demande par email</span>
+                    </a>
+                  </div>
+                  <p class="legal-text"><strong>Note :</strong> En cliquant sur ce bouton, votre client email s'ouvrira
+                    avec un message pré-rempli. Vous pourrez le personnaliser avant de l'envoyer.</p>
                 </div>
-                <p class="legal-text text-sm text-gray-500 mt-4"><strong>Note :</strong> En cliquant sur ce bouton, votre client email s'ouvrira avec un message pré-rempli. Vous pourrez le personnaliser avant de l'envoyer.</p>
               </div>
             </div>
           </div>
@@ -140,16 +172,14 @@
           <div class="cmp-footer__info">
             <div class="cmp-footer__contact-info">
               <h4>Contact</h4>
-              <p><a href="mailto:contact@westparisconsulting.fr" class="text-gray-300 hover:text-white transition-colors">contact@westparisconsulting.fr</a></p>
+              <p><a href="mailto:contact@westparisconsulting.fr"
+                  class="text-gray-300 hover:text-white transition-colors">contact@westparisconsulting.fr</a></p>
               <p>Université Paris Nanterre<br>200 Avenue de la République<br>92000 Nanterre</p>
             </div>
             <div class="cmp-footer__social">
               <div class="cmp-footer__social-links">
-                <a href="https://www.linkedin.com/company/westparisconsulting/" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   class="cmp-footer__social-link"
-                   aria-label="Suivez-nous sur LinkedIn">
+                <a href="https://www.linkedin.com/company/westparisconsulting/" target="_blank"
+                  rel="noopener noreferrer" class="cmp-footer__social-link" aria-label="Suivez-nous sur LinkedIn">
                   <svg class="cmp-footer__social-icon" viewBox="0 0 382 382" xmlns="http://www.w3.org/2000/svg">
                     <path d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889
                       C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056
@@ -159,7 +189,7 @@
                       c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079
                       c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426
                       c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472
-                      L341.91,330.654L341.91,330.654z"/>
+                      L341.91,330.654L341.91,330.654z" />
                   </svg>
                 </a>
               </div>
@@ -185,7 +215,8 @@
             </div>
           </nav>
           <div class="cmp-footer__copyright">
-            <p>© 2025 West Paris Consulting, association étudiante de l'Université Paris Nanterre. Tous droits réservés.</p>
+            <p>© 2025 West Paris Consulting, association étudiante de l'Université Paris Nanterre. Tous droits réservés.
+            </p>
           </div>
         </div>
       </div>
@@ -202,14 +233,31 @@
       } catch (error) {
         return;
       }
+      const { gsap } = getGSAP();
+      if (!gsap) return;
+      const heroButton = document.querySelector('.hero-button');
+      if (heroButton) {
+        heroButton.addEventListener('mousemove', (e) => {
+          const flair = heroButton.querySelector('.button__flair');
+          if (!flair) return;
+          const rect = heroButton.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          flair.style.left = `${x}px`;
+          flair.style.top = `${y}px`;
+          flair.style.transform = 'translate(-50%, -50%)';
+          gsap.to(flair, { width: '200px', height: '200px', opacity: 0.3, duration: 0.5, ease: 'power2.out' });
+        });
+        heroButton.addEventListener('mouseleave', () => {
+          const flair = heroButton.querySelector('.button__flair');
+          if (flair && gsap) {
+            gsap.to(flair, { opacity: 0, duration: 0.3 });
+          }
+        });
+      }
       initStrokeButtons();
     });
   </script>
-  <style>
-    .legal-content { display: flex; flex-direction: column; gap: 1.5rem; }
-    .legal-section { padding-bottom: 1.5rem; border-bottom: 1px solid #e5e7eb; }
-    .legal-section:last-child { border-bottom: none; }
-  </style>
 </body>
-</html>
 
+</html>
