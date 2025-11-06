@@ -1285,6 +1285,7 @@ body#page-wpc-nous-rejoindre .hero-contact-form iframe {
     display: block;
     position: relative;
     transform: none;
+    font-size: 1.25rem;
 }
 
 /* Masquer le deuxième span dans les autres pages pour éviter la duplication */
