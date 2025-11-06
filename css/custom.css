@@ -547,7 +547,7 @@ body:not(#page-wpc-main):not(#page-wpc-contact):not(#page-wpc-nous-rejoindre) .h
     /* Surcharge spécifique pour la page index - DOIT être après la règle générale */
     body#page-wpc-main .hero-container {
         justify-content: flex-start;
-        padding-top: 25.5rem;
+        padding-top: 15.5rem;
         padding-bottom: 3.25rem;
         min-height: auto;
     }
@@ -662,6 +662,11 @@ body#page-wpc-nous-rejoindre .hero-contact-form iframe {
         font-size: 3.5rem;
         margin-bottom: 1.5rem;
     }
+
+    /* Surcharge pour la page index - doit être après la règle générale */
+    body#page-wpc-main .hero-title {
+        margin-bottom: 1rem;
+    }
 }
 
 .hero-subtitle {
@@ -681,6 +686,11 @@ body#page-wpc-nous-rejoindre .hero-contact-form iframe {
     .hero-subtitle {
         font-size: 1.375rem;
         margin-top: 0;
+    }
+
+    /* Surcharge pour la page index - doit être après la règle générale */
+    body#page-wpc-main .hero-subtitle {
+        margin-bottom: 1.5rem;
     }
 }
 
