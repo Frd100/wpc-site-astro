@@ -1709,11 +1709,6 @@ body#page-wpc-main main section.index-section--about {
     display: flex;
     flex-direction: column;
     padding: 2rem 0;
-    border-bottom: 1px solid #000000;
-}
-
-.index-stacked-item:last-child {
-    border-bottom: none;
 }
 
 .index-stacked-title {

@@ -60,7 +60,7 @@ main {
   max-width: 100%;
 }
 
-/* Fond noir pour le main sur la page index */
+/* Fond blanc pour le main sur la page index (pour éviter les traits noirs entre sections) */
 body#page-wpc-main main {
-  background-color: #000000;
+  background-color: #FFFFFF;
 }
