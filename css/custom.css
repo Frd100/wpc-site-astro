@@ -737,6 +737,19 @@ body#page-wpc-nous-rejoindre .hero-contact-form iframe {
     will-change: opacity;
 }
 
+
+/* S'assurer que le conteneur de navigation peut contenir le menu mobile */
+.main-navigation__container {
+    position: relative;
+}
+
+/* S'assurer que le logo et le bouton hamburger restent au-dessus du menu mobile */
+.main-navigation__logo,
+.main-navigation__toggle {
+    position: relative;
+    z-index: 103;
+}
+
 /* Navigation identique sur toutes les pages (même style que index) */
 
 @keyframes fadeInNav {
@@ -766,6 +779,8 @@ body#page-wpc-nous-rejoindre .hero-contact-form iframe {
     align-items: center;
     min-height: 64px;
     position: relative;
+    padding-top: 0;
+    margin-top: 0;
 }
 
 @media (min-width: 768px) {
@@ -915,15 +930,27 @@ body#page-wpc-nous-rejoindre .hero-contact-form iframe {
     will-change: transform;
 }
 
-.main-navigation__link--mobile {
+/* Surcharge complète pour les liens mobiles - DOIT être après la règle générale */
+.main-navigation__link.main-navigation__link--mobile {
     font-size: 1.5rem;
-    height: 1.5em;
+    height: auto;
+    min-height: 1.5em;
+    color: #FFFFFF;
+    overflow: visible;
+    align-items: center;
+    justify-content: center;
+    width: auto;
 }
 
 /* Désactiver le positionnement absolu pour les liens mobiles */
 .main-navigation__link--mobile .main-navigation__link-text {
     position: relative;
     z-index: auto;
+    color: #FFFFFF;
+    display: block;
+    opacity: 1;
+    transform: none;
+    visibility: visible;
 }
 
 .main-navigation__link--mobile .main-navigation__link-text:last-child {
@@ -957,7 +984,7 @@ body#page-wpc-nous-rejoindre .hero-contact-form iframe {
 }
 
 @media (min-width: 768px) {
-    .main-navigation__toggle {
+    .main-navigation .main-navigation__toggle {
         display: none;
     }
 }
@@ -1171,9 +1198,97 @@ body#page-wpc-nous-rejoindre .hero-contact-form iframe {
     }
 }
 
+/* Positionner le menu mobile par rapport à la navigation pour qu'il aille jusqu'aux bords */
+.main-navigation__content {
+    position: relative;
+    overflow: visible;
+}
+
+.main-navigation__container {
+    overflow: visible;
+}
+
+.main-navigation {
+    overflow: visible;
+}
+
 #mobile-menu {
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(10px);
+    background: #000000;
+    position: absolute;
+    top: -64px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    z-index: 102;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding-top: 10rem;
+    padding-bottom: 2rem;
+    padding-left: 0;
+    padding-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: auto;
+    height: auto;
+    max-height: none;
+    transform: translateX(calc(-1 * 0.75rem));
+}
+
+@media (min-width: 768px) {
+    #mobile-menu {
+        top: -72px;
+        transform: translateX(calc(-1 * 1rem));
+    }
+}
+
+/* S'assurer que le menu mobile prend toute la largeur de l'écran sur mobile */
+@media (max-width: 767px) {
+    #mobile-menu {
+        top: -64px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+        transform: translateX(calc(-1 * 0.75rem));
+    }
+}
+
+#mobile-menu:not(.hidden) {
+    display: flex;
+}
+
+/* Forcer la visibilité des liens dans le menu mobile */
+#mobile-menu a {
+    opacity: 1;
+    visibility: visible;
+    color: #FFFFFF;
+    display: flex;
+}
+
+#mobile-menu .main-navigation__link-text {
+    opacity: 1;
+    visibility: visible;
+    color: #FFFFFF;
+    display: block;
+    position: relative;
+    transform: none;
+}
+
+/* Masquer le deuxième span dans les autres pages pour éviter la duplication */
+#mobile-menu .main-navigation__link-text[aria-hidden="true"],
+#mobile-menu .main-navigation__link-text:last-child:not(:only-child) {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .main-navigation #mobile-menu {
+        display: none;
+    }
 }
 
 /* ============================================

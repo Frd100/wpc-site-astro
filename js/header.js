@@ -19,6 +19,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (!mobileToggle || !mobileMenu) return;
 
+    // S'assurer que le menu est fermé au chargement
+    mobileMenu.classList.add('hidden');
+    mobileToggle.setAttribute('aria-expanded', 'false');
+
     let isOpen = false;
 
     mobileToggle.addEventListener('click', () => {
@@ -30,22 +34,41 @@ document.addEventListener('DOMContentLoaded', async () => {
             if (isOpen) {
                 // Ouvrir le menu
                 mobileMenu.classList.remove('hidden');
-                mobileMenu.classList.add('fixed', 'top-0', 'left-0', 'w-full', 'h-screen', 'z-40', 'flex', 'flex-col', 'justify-center', 'items-center', 'gap-8');
+                mobileMenu.classList.add('absolute', 'top-0', 'left-0', 'w-full', 'z-40', 'flex', 'flex-col', 'items-center', 'gap-6');
 
                 gsap.fromTo(mobileMenu,
-                    { x: '-100%', opacity: 0 },
-                    { x: 0, opacity: 1, duration: 0.5, ease: 'power3.out' }
+                    { y: '-100%', opacity: 0 },
+                    { y: 0, opacity: 1, duration: 0.4, ease: 'power3.out' }
                 );
 
                 // Animation des liens
                 const links = mobileMenu.querySelectorAll('a');
+                const linkTexts = mobileMenu.querySelectorAll('.main-navigation__link-text');
+
+                // S'assurer que les liens et leurs textes sont visibles
+                links.forEach(link => {
+                    gsap.set(link, { opacity: 1, visibility: 'visible', y: 0 });
+                });
+                linkTexts.forEach(text => {
+                    gsap.set(text, { opacity: 1, visibility: 'visible', transform: 'none' });
+                });
+
                 gsap.from(links, {
-                    y: 30,
+                    y: -20,
                     opacity: 0,
-                    stagger: 0.1,
-                    duration: 0.4,
+                    stagger: 0.08,
+                    duration: 0.3,
                     ease: 'power2.out',
-                    delay: 0.2
+                    delay: 0.1,
+                    onComplete: () => {
+                        // S'assurer que tout est visible après l'animation
+                        links.forEach(link => {
+                            gsap.set(link, { opacity: 1, visibility: 'visible' });
+                        });
+                        linkTexts.forEach(text => {
+                            gsap.set(text, { opacity: 1, visibility: 'visible' });
+                        });
+                    }
                 });
 
                 // Animation hamburger
@@ -55,13 +78,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             } else {
                 // Fermer le menu
                 gsap.to(mobileMenu, {
-                    x: '-100%',
+                    y: '-100%',
                     opacity: 0,
-                    duration: 0.5,
+                    duration: 0.4,
                     ease: 'power3.in',
                     onComplete: () => {
                         mobileMenu.classList.add('hidden');
-                        mobileMenu.classList.remove('fixed', 'top-0', 'left-0', 'w-full', 'h-screen', 'z-40', 'flex', 'flex-col', 'justify-center', 'items-center', 'gap-8');
+                        mobileMenu.classList.remove('absolute', 'top-0', 'left-0', 'w-full', 'z-40', 'flex', 'flex-col', 'items-center', 'gap-6');
                     }
                 });
 
@@ -75,10 +98,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Menu basique sans GSAP (fallback)
             if (isOpen) {
                 mobileMenu.classList.remove('hidden');
-                mobileMenu.classList.add('fixed', 'top-0', 'left-0', 'w-full', 'h-screen', 'z-40', 'flex', 'flex-col', 'justify-center', 'items-center', 'gap-8');
+                mobileMenu.classList.add('absolute', 'top-0', 'left-0', 'w-full', 'z-40', 'flex', 'flex-col', 'items-center', 'gap-6');
             } else {
                 mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('fixed', 'top-0', 'left-0', 'w-full', 'h-screen', 'z-40', 'flex', 'flex-col', 'justify-center', 'items-center', 'gap-8');
+                mobileMenu.classList.remove('absolute', 'top-0', 'left-0', 'w-full', 'z-40', 'flex', 'flex-col', 'items-center', 'gap-6');
             }
         }
     });
