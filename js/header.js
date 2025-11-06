@@ -95,9 +95,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Animation hover par lettre pour les liens de navigation
     function setupLetterHoverAnimation() {
-        const navLinks = document.querySelectorAll('.main-navigation__link');
+        // Sélectionner uniquement les liens du menu desktop (pas ceux du menu mobile)
+        const allNavLinks = document.querySelectorAll('.main-navigation__link');
+        const navLinks = Array.from(allNavLinks).filter(link => {
+            // Exclure les liens qui sont dans le menu mobile ou qui ont la classe mobile
+            return !link.classList.contains('main-navigation__link--mobile') &&
+                !link.closest('#mobile-menu');
+        });
 
         navLinks.forEach(link => {
+
             const textElements = link.querySelectorAll('.main-navigation__link-text');
 
             textElements.forEach(textElement => {

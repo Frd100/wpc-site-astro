@@ -920,6 +920,17 @@ body#page-wpc-nous-rejoindre .hero-contact-form iframe {
     height: 1.5em;
 }
 
+/* Désactiver le positionnement absolu pour les liens mobiles */
+.main-navigation__link--mobile .main-navigation__link-text {
+    position: relative;
+    z-index: auto;
+}
+
+.main-navigation__link--mobile .main-navigation__link-text:last-child {
+    position: relative;
+    display: none;
+}
+
 .main-navigation__toggle {
     position: absolute;
     top: 50%;
