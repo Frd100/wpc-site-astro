@@ -125,11 +125,6 @@ body#page-wpc-main .hero-button:focus {
     width: 170%;
 }
 
-/* Scroll animation classes */
-.scroll-animation--in-viewport {
-    /* Classe ajoutée par IntersectionObserver */
-}
-
 /* === Homepage Sections Organization === */
 .homepage-section {
     width: 100%;
