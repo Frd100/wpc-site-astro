@@ -8,6 +8,42 @@ document.addEventListener('DOMContentLoaded', async () => {
         gsap = null;
     }
 
+    if (gsap) {
+        const logo = document.querySelector('.main-navigation__logo');
+        const desktopLinks = document.querySelectorAll('.main-navigation__links:not(#mobile-menu) .main-navigation__link');
+        const mobileToggleBtn = document.querySelector('.main-navigation__toggle');
+
+        const animateElement = (element, delay) => {
+            gsap.set(element, { marginTop: '-40px', opacity: 0 });
+
+            gsap.to(element, {
+                marginTop: '0px',
+                opacity: 1,
+                duration: 0.8,
+                ease: 'power3.out',
+                delay: delay,
+                onComplete: () => {
+                    element.style.opacity = '1';
+                    element.style.marginTop = '';
+                }
+            });
+        };
+
+        if (logo) {
+            animateElement(logo, 0.3);
+        }
+
+        if (desktopLinks.length > 0) {
+            desktopLinks.forEach((link, index) => {
+                animateElement(link, 0.4 + (index * 0.05));
+            });
+        }
+
+        if (mobileToggleBtn) {
+            animateElement(mobileToggleBtn, 0.3);
+        }
+    }
+
     const mobileToggle = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const hamburgerLines = document.querySelectorAll('.hamburger-line');

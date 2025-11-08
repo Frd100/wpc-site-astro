@@ -50,5 +50,21 @@ document.addEventListener('DOMContentLoaded', async () => {
       });
     }
   }
+
+  const marqueeContainer = document.querySelector('.hero-marquee-container');
+  if (marqueeContainer && gsap) {
+    gsap.set(marqueeContainer, { y: 15, opacity: 0 });
+    gsap.to(marqueeContainer, {
+      y: 0,
+      opacity: 1,
+      duration: 0.6,
+      ease: 'power2.out',
+      delay: 0.5,
+      onComplete: () => {
+        marqueeContainer.style.opacity = '1';
+        marqueeContainer.style.transform = 'translateY(0)';
+      }
+    });
+  }
 });
 
