@@ -734,13 +734,14 @@ body#page-wpc-nous-rejoindre .hero-contact-form iframe {
     display: flex;
     align-items: center;
     gap: 4rem;
-    animation: marquee 18s linear infinite;
+    animation: marquee 25s linear infinite;
     will-change: transform;
 }
 
 @media (min-width: 768px) {
     .hero-marquee__track {
         gap: 5rem;
+        animation: marquee 30s linear infinite;
     }
 }
 
