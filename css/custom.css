@@ -789,15 +789,7 @@ body#page-wpc-nous-rejoindre .hero-contact-form iframe {
     color: #FFFFFF;
 }
 
-@keyframes marquee {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
-}
+/* @keyframes marquee est généré dynamiquement par JavaScript pour une boucle parfaite */
 
 @media (prefers-reduced-motion: reduce) {
     .hero-marquee__track {
@@ -1493,6 +1485,38 @@ body#page-wpc-main main .index-section--about,
 body#page-wpc-main main section.index-section--about {
     background-color: #FFFFFF;
     background: #FFFFFF;
+}
+
+/* Centrer le contenu de la section "Qui sommes-nous" */
+.index-section--about .index-stacked-list {
+    text-align: center;
+    align-items: center;
+}
+
+.index-section--about .index-stacked-item {
+    align-items: center;
+    text-align: center;
+}
+
+/* Taille réduite du titre "Qui sommes-nous" avec effet blur */
+.index-section--about .index-stacked-title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    will-change: filter;
+}
+
+@media (min-width: 768px) {
+    .index-section--about .index-stacked-title {
+        font-size: 4rem;
+    }
+}
+
+.index-section--about .index-stacked-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .index-section--ancrage {
