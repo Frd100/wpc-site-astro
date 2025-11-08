@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   const { gsap, SplitText, ScrollTrigger } = getGSAP();
-  
+
   if (!gsap || !SplitText || !ScrollTrigger) {
     return;
   }
