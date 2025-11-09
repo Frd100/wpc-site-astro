@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   let resizeTimeout;
-  
+
   const calculateMarquee = () => {
     const marqueeTrack = document.querySelector('.hero-marquee__track');
     if (!marqueeTrack) return;
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       `;
       document.head.appendChild(style);
-      
+
       // Forcer le recalcul de l'animation en réappliquant la classe
       marqueeTrack.style.animation = 'none';
       requestAnimationFrame(() => {

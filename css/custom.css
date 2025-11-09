@@ -384,7 +384,7 @@ body:not(#page-wpc-main):not(#page-wpc-contact):not(#page-wpc-nous-rejoindre) .h
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('../public/images/background-mobile.png') center top / cover no-repeat;
+    background: url('../public/images/background-mobile.webp') center top / cover no-repeat;
     transform: translateY(-30%);
     opacity: 0;
     animation: backgroundSlideIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
@@ -395,7 +395,7 @@ body:not(#page-wpc-main):not(#page-wpc-contact):not(#page-wpc-nous-rejoindre) .h
 
 @media (min-width: 768px) {
     .hero-minimal::before {
-        background-image: url('../public/images/background.png');
+        background-image: url('../public/images/background.webp');
     }
 }
 

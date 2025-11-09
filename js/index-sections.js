@@ -19,12 +19,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (split.words && split.words.length > 0) {
       const allWords = [];
       allWords.push(...split.words);
-      
-      gsap.set(split.words, { 
+
+      gsap.set(split.words, {
         filter: 'blur(20px)',
-        opacity: 0 
+        opacity: 0
       });
-      
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: aboutTitle,
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           });
         }
       });
-      
+
       split.words.forEach((word, wordIndex) => {
         tl.to(word, {
           filter: 'blur(0px)',
