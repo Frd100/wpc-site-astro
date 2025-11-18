@@ -1,0 +1,134 @@
+/**
+ * Animations simplifiées pour le site WPC
+ * Compatible avec le design actuel (hero-section, content-section)
+ */
+
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        await waitForGSAP();
+    } catch (error) {
+        console.warn('GSAP non disponible, animations désactivées');
+        return;
+    }
+
+    const { gsap, SplitText, ScrollTrigger } = getGSAP();
+
+    if (!gsap || !ScrollTrigger) {
+        return;
+    }
+
+    // Enregistrer ScrollTrigger
+    if (ScrollTrigger) {
+        gsap.registerPlugin(ScrollTrigger);
+    }
+
+    /**
+     * Animation du titre hero avec effet blur
+     */
+    function initHeroTitleAnimation() {
+        const heroTitle = document.querySelector('.hero-section__title');
+        if (!heroTitle || !SplitText) return;
+
+        const split = new SplitText(heroTitle, { type: 'words' });
+        if (!split.words || split.words.length === 0) return;
+
+        const allWords = [];
+        allWords.push(...split.words);
+
+        gsap.set(split.words, {
+            filter: 'blur(20px)',
+            opacity: 0
+        });
+
+        const tl = gsap.timeline({
+            onComplete: () => {
+                allWords.forEach(word => {
+                    word.style.opacity = '1';
+                    word.style.filter = 'blur(0px)';
+                });
+            }
+        });
+
+        split.words.forEach((word, wordIndex) => {
+            tl.to(word, {
+                filter: 'blur(0px)',
+                opacity: 1,
+                duration: 0.8,
+                ease: 'power2.out'
+            }, wordIndex * 0.1);
+        });
+    }
+
+    /**
+     * Animation de la description hero
+     */
+    function initHeroDescriptionAnimation() {
+        const heroDescription = document.querySelector('.hero-section__description');
+        if (!heroDescription) return;
+
+        gsap.set(heroDescription, { opacity: 0, y: 30 });
+        gsap.to(heroDescription, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power2.out',
+            delay: 0.3
+        });
+    }
+
+    /**
+     * Animation des sections de contenu au scroll
+     */
+    function initContentSectionsAnimation() {
+        const contentSections = document.querySelectorAll('.content-section');
+
+        contentSections.forEach((section, index) => {
+            const title = section.querySelector('.content-section__title');
+            const text = section.querySelector('.content-section__text');
+
+            // Animation du titre
+            if (title && SplitText) {
+                const split = new SplitText(title, { type: 'words' });
+                if (split.words && split.words.length > 0) {
+                    gsap.set(split.words, { opacity: 0, y: 40 });
+
+                    gsap.to(split.words, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.6,
+                        ease: 'power3.out',
+                        stagger: 0.05,
+                        scrollTrigger: {
+                            trigger: title,
+                            start: 'top 85%',
+                            toggleActions: 'play none none none'
+                        }
+                    });
+                }
+            }
+
+            // Animation du texte
+            if (text) {
+                gsap.set(text, { opacity: 0, y: 30 });
+                gsap.to(text, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.6,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: text,
+                        start: 'top 85%',
+                        toggleActions: 'play none none none'
+                    },
+                    delay: 0.2
+                });
+            }
+        });
+    }
+
+    // Initialiser les animations
+    initHeroTitleAnimation();
+    initHeroDescriptionAnimation();
+    initContentSectionsAnimation();
+});
+
