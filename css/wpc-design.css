@@ -426,6 +426,7 @@ body {
   background-color: var(--white);
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .main-navigation__menu.mobile-open .main-navigation__item {
@@ -438,6 +439,37 @@ body {
 }
 
 .main-navigation__menu.mobile-open .main-navigation__link::after {
+  display: none;
+}
+
+/* Bouton LinkedIn dans le menu mobile */
+.main-navigation__menu.mobile-open .main-navigation__item--linkedin {
+  margin-top: 0.5rem;
+  padding: 0 1.5rem;
+}
+
+.main-navigation__menu.mobile-open .main-navigation__link--linkedin {
+  background-color: var(--teal-light);
+  color: var(--white);
+  border-radius: 0;
+  padding: 0.875rem 1.5rem;
+  text-align: center;
+  justify-content: center;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.main-navigation__menu.mobile-open .main-navigation__link--linkedin:hover {
+  background-color: #025a4d;
+  color: var(--white);
+}
+
+.main-navigation__menu.mobile-open .main-navigation__link--linkedin svg {
+  margin-right: 0.5rem;
+}
+
+/* Cacher le bouton LinkedIn dans le menu desktop */
+.main-navigation__item--linkedin {
   display: none;
 }
 
@@ -806,7 +838,7 @@ body {
 .hero-section__title {
   font-family: var(--font-serif);
   font-size: 3.5rem;
-  font-weight: 400;
+  font-weight: 700;
   color: #000000;
   line-height: 1.2;
   margin-bottom: 2rem;
@@ -873,6 +905,7 @@ body {
   font-size: 3.5rem;
   margin-top: 0;
   margin-bottom: 3rem;
+  letter-spacing: 0.01em;
 }
 
 .content-section__text {
@@ -886,6 +919,22 @@ body {
 .content-section__text.candidature-grid {
   max-width: 100%;
   width: 100%;
+}
+
+/* Image La Défense - Mobile uniquement */
+.hero-mobile-image {
+  display: none;
+  margin: 2rem auto 0;
+  padding: 0 0.125rem;
+  max-width: calc(100% - 0.25rem);
+  width: 100%;
+}
+
+.hero-mobile-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
 }
 
 /* Section Qui sommes-nous avec image */
@@ -951,6 +1000,7 @@ body {
   text-align: center;
   margin: 0 0 3rem 0;
   line-height: 1.2;
+  letter-spacing: 0.01em;
 }
 
 .domaines-section__grid {
@@ -1073,6 +1123,7 @@ body {
   text-align: center;
   margin-top: 0;
   margin-bottom: 3rem;
+  letter-spacing: 0.01em;
 }
 
 .processus-timeline {
@@ -1438,98 +1489,6 @@ body {
 }
 
 /* ============================================
-   BANNIÈRE COOKIES
-   ============================================ */
-
-.cookie-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: var(--white);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-  z-index: 10000;
-  display: none;
-}
-
-.cookie-banner.active {
-  display: block;
-}
-
-.cookie-banner__container {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-}
-
-.cookie-banner__text {
-  flex: 1;
-  font-size: 0.875rem;
-  color: #666666;
-  line-height: 1.6;
-}
-
-.cookie-banner__actions {
-  display: flex;
-  gap: 1rem;
-}
-
-.cookie-banner__button {
-  padding: 0.75rem 1.5rem;
-  border: none;
-  cursor: pointer;
-  font-size: 0.875rem;
-  font-weight: 500;
-  border-radius: 0;
-  transition: all 0.2s;
-}
-
-.cookie-banner__button--accept {
-  background-color: var(--teal-light);
-  color: var(--white);
-}
-
-.cookie-banner__button--accept:hover {
-  background-color: #025a4d;
-}
-
-.cookie-banner__button--reject {
-  background-color: transparent;
-  color: #000000;
-  border: 1px solid #000000;
-}
-
-.cookie-banner__button--reject:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-.cookie-banner__close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: transparent;
-  border: none;
-  color: var(--white);
-  cursor: pointer;
-  font-size: 1.25rem;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  transition: background-color 0.2s;
-}
-
-.cookie-banner__close:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* ============================================
    RESPONSIVE
    ============================================ */
 
@@ -1551,41 +1510,49 @@ body {
 
 @media (max-width: 768px) {
   .main-navigation__container {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .main-navigation__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 1;
+    flex-shrink: 0;
   }
 
   .main-navigation__logo {
     order: 2;
-    width: 100%;
+    flex: 1;
     text-align: center;
-  }
-
-  .main-navigation__menu {
-    order: 3;
-    width: 100%;
+    display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
   }
 
   .main-navigation__social {
-    order: 1;
-    margin-left: 0;
+    display: none;
   }
 
   .main-navigation__menu {
     display: none;
+    order: 3;
   }
 
-  .main-navigation__toggle {
+  /* Afficher le bouton LinkedIn dans le menu mobile */
+  .main-navigation__item--linkedin {
     display: block;
   }
 
   .hero-section--home {
-    background-image: url('../public/images/bannière-mobile.png');
+    background-color: var(--white);
+    background-image: none;
     align-items: flex-start;
     padding-top: 1rem;
-    min-height: 500px;
+    min-height: auto;
   }
 
   .hero-section--home .main-content__container {
@@ -1622,6 +1589,11 @@ body {
     line-height: 1.7;
   }
 
+  /* Afficher l'image La Défense en mobile */
+  .hero-mobile-image {
+    display: block;
+  }
+
   .hero-section__subtitle {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
@@ -1639,20 +1611,6 @@ body {
 
   .footer__top {
     grid-template-columns: 1fr;
-  }
-
-  .cookie-banner__container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .cookie-banner__actions {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .cookie-banner__button {
-    flex: 1;
   }
 }
 
